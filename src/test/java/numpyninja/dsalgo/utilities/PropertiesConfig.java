@@ -1,6 +1,7 @@
 package numpyninja.dsalgo.utilities;
 
 
+import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
@@ -15,7 +16,16 @@ public class PropertiesConfig {
 		System.out.println("I am inside load properties of Propertiesconfig");
 		Properties properties = new Properties();
 		try {
-			properties.load(getClass().getResourceAsStream("/Config.properties"));
+			String projectpath=System.getProperty("user.dir");
+			String filepath=projectpath+"\\Config.properties";
+			System.out.println("This is created file path" +filepath);
+			
+			
+		
+			FileInputStream input=new FileInputStream(filepath);
+			properties.load(input);
+			
+			//properties.load(getClass().getResourceAsStream(filepath));
 		}
 		catch(Exception exception)
 		{
@@ -36,8 +46,13 @@ public class PropertiesConfig {
 
 		try {
 
-			properties.load(getClass().getResourceAsStream("/Config.properties"));
+			
 
+			String projectpath=System.getProperty("user.dir");
+			String filepath=projectpath+"/Config.properties";
+			System.out.println("This is created file path" +filepath);
+			properties.load(getClass().getResourceAsStream(filepath));
+			
 		}
 		catch(Exception exception)
 		{
