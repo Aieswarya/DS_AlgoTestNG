@@ -64,10 +64,13 @@ public class SignInPage {
 	public void navigateSignIn() {
 		GetStarted gs = new GetStarted(ldriver);
 		gs.clickgetstartedbtn();
+		System.out.println("Get started button is clicked");
 	}
 
 	public void clickSignIn() {
+		System.out.println("Before click SignIn");
 		btnSignin.click();
+		System.out.println("After click SignIn");
 	}
 
 	public void ValidCredentials() {
@@ -105,39 +108,8 @@ public class SignInPage {
 
 	}
 
-	public void readInvalidCredentials(String Sheetname, int rownumber) throws FileNotFoundException {
-
-		try {
-
-			FileInputStream file = new FileInputStream(new File("Data.xlsx"));
-
-			XSSFWorkbook workbook = new XSSFWorkbook(file);
-
-			Sheet sheet = workbook.getSheet(Sheetname);
-
-			Row row = sheet.getRow(rownumber);
-
-			INVALID_USERNAME = row.getCell(0).getStringCellValue();
-
-			if (rownumber == 3) 
-			{
-				INVALID_PASSWORD = "";
-			} else {
-				INVALID_PASSWORD = row.getCell(1).getStringCellValue();
-			}
-
-			EXPECTED_LOGIN_ERROR_MSG = row.getCell(2).getStringCellValue();
-
-			doLogin(INVALID_USERNAME, INVALID_PASSWORD);
-
-		} catch (IOException e) {
-
-			e.printStackTrace();
-		}
-
-	}
-
-	public boolean ValidateLoginErrorMsg(int rownumber) {
+	
+   public boolean ValidateLoginErrorMsg(int rownumber) {
 		boolean result = false;
 		if (rownumber == 3) {
 
@@ -162,12 +134,5 @@ public class SignInPage {
 
 		
 	}
-
 	
-	
-	
-
-
-
-
 }
