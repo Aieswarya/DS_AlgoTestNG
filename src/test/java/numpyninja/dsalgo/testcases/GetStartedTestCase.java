@@ -8,6 +8,7 @@ import org.testng.annotations.Test;
 import numpyninja.dsalgo.pagefactory.GetStarted;
 import numpyninja.dsalgo.testBase.BaseClass;
 import numpyninja.dsalgo.webdrivermanager.DriverManager;
+import numpyninja.dsalgo.utilities.LoggerLoad;
 
 public class GetStartedTestCase extends BaseClass {
 	private static final Logger LOGGER = LogManager.getLogger(GetStartedTestCase.class);
@@ -16,8 +17,9 @@ public class GetStartedTestCase extends BaseClass {
 	public void user_clicks_the_get_started_button_at_start_page() {
 
 		GetStarted gs = new GetStarted(DriverManager.getDriver());
+		LoggerLoad.info("I am in GetStartedtestcase");
 		gs.clickgetstartedbtn();
 		Assert.assertTrue(true);
-		LOGGER.info("Get Started Button is clicked");
+		//LOGGER.info("Get Started Button is clicked");
 	}
 }

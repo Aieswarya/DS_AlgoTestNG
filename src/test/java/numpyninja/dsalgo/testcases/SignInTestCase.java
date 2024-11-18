@@ -22,6 +22,7 @@ import numpyninja.dsalgo.constants.Constants;
 import numpyninja.dsalgo.pagefactory.SignInPage;
 import numpyninja.dsalgo.testBase.BaseClass;
 import numpyninja.dsalgo.utilities.ExcelUtils;
+import numpyninja.dsalgo.utilities.LoggerLoad;
 import numpyninja.dsalgo.webdrivermanager.DriverManager;
 
 
@@ -38,6 +39,8 @@ public class SignInTestCase extends BaseClass {
  	@BeforeMethod
  	public  void beforemethod()
  	{
+ 		
+ 		LoggerLoad.info("I am in Before Method of SignIntestcase");
  		SignInPage sp = new SignInPage(DriverManager.getDriver());
  		DriverManager.getDriver().get(Constants.APP_URL);
  		sp.navigateSignIn();
@@ -48,6 +51,7 @@ public class SignInTestCase extends BaseClass {
 	public void NegativeTest(String username, String password,String expectedErrorMsg) {
 		
 		SignInPage sp = new SignInPage(DriverManager.getDriver());
+		LoggerLoad.info("I am in Before Method of SignIntestcase");
 		sp.clickSignIn();
 	    sp.clickLogin();
 	    boolean result= sp.ValidateLoginErrorMsg(password,expectedErrorMsg);
@@ -76,7 +80,7 @@ public class SignInTestCase extends BaseClass {
 	@Test(priority=2)
 	public void verify_SignIn_logged_In() {
 		
-	LOGGER.info(" I am in the SingIn test case1");
+	LoggerLoad.info(" I am in the SingIn test case1");
 	SignInPage sp = new SignInPage(DriverManager.getDriver());
 		
 	//sp.navigateSignIn();

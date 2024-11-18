@@ -15,15 +15,20 @@ import numpyninja.dsalgo.pagefactory.HomePage;
 import numpyninja.dsalgo.pagefactory.SignInPage;
 import numpyninja.dsalgo.testBase.BaseClass;
 import numpyninja.dsalgo.webdrivermanager.DriverManager;
+import numpyninja.dsalgo.utilities.LoggerLoad;
 
 public class HomePageTestCase extends BaseClass {
 	
 	private static final Logger LOGGER = LogManager.getLogger(HomePageTestCase.class);
 	
+
+	
 	@Test(dataProvider="ddoptions")
 	public void verify_WarningMsg_for_ddselect_withoutsignin(String type) {
 		
 		HomePage hp = new HomePage(DriverManager.getDriver());
+		
+		LoggerLoad.info("I am in Hometestcase");
 		
 		switch (type) {
 
@@ -54,7 +59,7 @@ public class HomePageTestCase extends BaseClass {
 	    Assert.assertTrue(result);
 			
 	    
-		LOGGER.info("The user checks warning message is displayed");
+		//LOGGER.info("The user checks warning message is displayed");
      }
     
 	
