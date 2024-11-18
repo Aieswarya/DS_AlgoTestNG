@@ -78,16 +78,9 @@ public FileInputStream fi;
 		sheet=workbook.getSheet(sheetName);
 		row=sheet.getRow(rownum);
 		cell=row.getCell(colnum);
-		
 		DataFormatter formatter = new DataFormatter();
 		String data;
-		try{
 		data = formatter.formatCellValue(cell); //Returns the formatted value of a cell as a String regardless of the cell type.
-		}
-		catch(Exception e)
-		{
-			data="";
-		}
 		workbook.close();
 		fi.close();
 		return data;

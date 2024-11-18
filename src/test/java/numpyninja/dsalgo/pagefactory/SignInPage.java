@@ -109,15 +109,15 @@ public class SignInPage {
 	}
 
 	
-   public boolean ValidateLoginErrorMsg(int rownumber) {
+   public boolean ValidateLoginErrorMsg(String password,String expectedErrorMsg) {
 		boolean result = false;
-		if (rownumber == 3) {
+		if (password =="") {
 
 			String msg = txtpassword.getAttribute("validationMessage");
-			result = msg.contains(EXPECTED_LOGIN_ERROR_MSG);
+			result = msg.contains(expectedErrorMsg);
 
 		} else {
-			result = invalidusrnamepswd.getText().equalsIgnoreCase(EXPECTED_LOGIN_ERROR_MSG);
+			result = invalidusrnamepswd.getText().equalsIgnoreCase(expectedErrorMsg);
 		}
 
 		return result;
