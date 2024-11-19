@@ -40,22 +40,24 @@ public class SignInTestCase extends BaseClass {
  	public  void beforemethod()
  	{
  		
- 		LoggerLoad.info("I am in Before Method of SignIntestcase");
+ 		
  		SignInPage sp = new SignInPage(DriverManager.getDriver());
  		DriverManager.getDriver().get(Constants.APP_URL);
  		sp.navigateSignIn();
  	}
  	
  	
- 	@Test(dataProvider="InvalidTestData",priority=1)
+ 	@Test(dataProvider="InvalidTestData",priority=6)
 	public void NegativeTest(String username, String password,String expectedErrorMsg) {
 		
 		SignInPage sp = new SignInPage(DriverManager.getDriver());
-		LoggerLoad.info("I am in Before Method of SignIntestcase");
+		LoggerLoad.info("TestCase 6: Check warning message displayed for Invalid credentials");
 		sp.clickSignIn();
+		sp.doLogin(username, password);
 	    sp.clickLogin();
 	    boolean result= sp.ValidateLoginErrorMsg(password,expectedErrorMsg);
         Assert.assertTrue(result);
+        LoggerLoad.info("Verified Warning message");
 	}
 	
 	
@@ -77,30 +79,31 @@ public class SignInTestCase extends BaseClass {
 	  }
 	
 	
-	@Test(priority=2)
+	@Test(priority=7)
 	public void verify_SignIn_logged_In() {
 		
-	LoggerLoad.info(" I am in the SingIn test case1");
+	LoggerLoad.info("Testcase 7: Check login message");
 	SignInPage sp = new SignInPage(DriverManager.getDriver());
-		
-	//sp.navigateSignIn();
+
 	sp.clickSignIn();
 	sp.ValidCredentials();
 	sp.clickLogin();
 	boolean result=sp.getLoginMessage();
 	Assert.assertTrue(result);
+	LoggerLoad.info("Verified LogIn message");
 	    
 	}   
 	
 	
-	@Test(priority=3)
+	@Test(priority=8)
 	
 	public void verify_signIn_Display_of_username() {
 		
-		LOGGER.info(" I am in the SingIn testcase2");
+		LoggerLoad.info("Testcase 8: Check UserName display ");
 		SignInPage sp = new SignInPage(DriverManager.getDriver());
 		boolean result=sp.isUsernameDisplayedAsLink();
 		Assert.assertTrue(result);
+		LoggerLoad.info("Verified UserName Display");
 	}
 }
 

@@ -23,9 +23,8 @@ public class HomePage {
 	public WebDriver hdriver;
 
 	public HomePage(WebDriver rdriver) {
-		System.out.println("Entered HomePage POM constructor");
 		hdriver = rdriver;
-		System.out.println("Going to instantiate Web Elements in HomePage");
+		
 		PageFactory.initElements(rdriver, this);
 	}
 
@@ -126,7 +125,7 @@ public class HomePage {
 	}
 
 	public boolean getdropdownoptions(int count, String options) {
-		System.out.println("Entered the POM action method");
+		
 		boolean result = false;
 		List<WebElement> ddlist = hdriver.findElements(By.xpath("//div[@class='dropdown-menu show']//a"));
 		String[] givenlist = options.split(",");

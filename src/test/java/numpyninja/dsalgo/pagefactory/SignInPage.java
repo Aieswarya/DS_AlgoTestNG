@@ -56,21 +56,27 @@ public class SignInPage {
 	@FindBy(xpath = "//div[@role='alert']")
 	WebElement invalidusrnamepswd;
 
-	
+	@FindBy(xpath="//a[@href='/logout']")
+	WebElement signout;
    
 	
 	// ----------------MethodsImplementation----------------------------------------//
 
+	
+	public void signout()
+	{
+		signout.click();
+	}
 	public void navigateSignIn() {
 		GetStarted gs = new GetStarted(ldriver);
 		gs.clickgetstartedbtn();
-		System.out.println("Get started button is clicked");
+		
 	}
 
 	public void clickSignIn() {
-		System.out.println("Before click SignIn");
+		
 		btnSignin.click();
-		System.out.println("After click SignIn");
+		
 	}
 
 	public void ValidCredentials() {

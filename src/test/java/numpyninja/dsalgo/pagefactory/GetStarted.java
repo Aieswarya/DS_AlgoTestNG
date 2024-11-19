@@ -6,13 +6,12 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class GetStarted {
+public class GetStarted extends BasePage{
 
-	public WebDriver gsdriver;
+	public static WebDriver gsdriver;
 
-	public GetStarted(WebDriver rdriver) {
-		gsdriver = rdriver;
-		PageFactory.initElements(rdriver, this);
+	public GetStarted(WebDriver driver) {
+		super(driver);
 	}
 	
 	@FindBy(xpath="//button[normalize-space()='Get Started']")
