@@ -18,6 +18,7 @@ import io.cucumber.java.AfterStep;
 import io.cucumber.java.Scenario;
 import numpyninja.dsalgo.constants.Constants;
 import numpyninja.dsalgo.utilities.ExcelUtils;
+import numpyninja.dsalgo.utilities.LoggerLoad;
 import numpyninja.dsalgo.utilities.PropertiesConfig;
 import numpyninja.dsalgo.webdrivermanager.DriverManager;
 
@@ -25,12 +26,12 @@ import numpyninja.dsalgo.webdrivermanager.DriverManager;
 
 public class BaseClass {
 
-	public static final Logger LOGGER = LogManager.getLogger(BaseClass.class);
+	
 
 	
 	@BeforeClass
 	public void beforeScenario() {
-		LOGGER.info("Execution started..");
+		LoggerLoad.info("DS Algo TestNG test started ");
 		
 		try {
 
@@ -38,11 +39,10 @@ public class BaseClass {
 			propertiesConfig.loadProperties();
 			ExcelUtils excelutils = new ExcelUtils();
 			ExcelUtils.getLogin();
-			DriverManager.launchBrowser();			
+			DriverManager.launchBrowser();
+			DriverManager.getDriver().manage().deleteAllCookies();
 			DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 			DriverManager.getDriver().get(Constants.APP_URL);
-
-			LOGGER.info("DS Algo website launched");
 			
 
 		} catch (Exception exception) {
@@ -56,7 +56,7 @@ public class BaseClass {
 	public void teardown() {
 		
 		DriverManager.getDriver().quit();
-		LOGGER.info("Driver is shutdown");
+		LoggerLoad.info("Driver is shutdown");
 		
 	}
 

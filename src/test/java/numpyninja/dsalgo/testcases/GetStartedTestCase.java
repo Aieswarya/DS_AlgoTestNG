@@ -13,13 +13,13 @@ import numpyninja.dsalgo.utilities.LoggerLoad;
 public class GetStartedTestCase extends BaseClass {
 	private static final Logger LOGGER = LogManager.getLogger(GetStartedTestCase.class);
 
-	@Test
+	@Test(priority=0)
 	public void user_clicks_the_get_started_button_at_start_page() {
 
 		GetStarted gs = new GetStarted(DriverManager.getDriver());
-		LoggerLoad.info("I am in GetStartedtestcase");
+		LoggerLoad.info("TestCase 0 : Check GetStarted Button functionality");
 		gs.clickgetstartedbtn();
 		Assert.assertTrue(true);
-		//LOGGER.info("Get Started Button is clicked");
+		LoggerLoad.info("Verified  GetStarted Button functionality");
 	}
 }

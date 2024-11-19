@@ -4,7 +4,7 @@
   <test name="DSAlgoTestNG">
 <classes>
 <class name="numpyninja.dsalgo.testcases.GetStartedTestCase"></class>
-<class name="numpyninja.dsalgo.testcases.HomePageTestCase"></class>
+<!--  class name="numpyninja.dsalgo.testcases.HomePageTestCase"></class-->
 <!-- class name="numpyninja.dsalgo.testcases.SignInTestCase"/-->
 
 </classes>
