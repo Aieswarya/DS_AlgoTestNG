@@ -27,7 +27,13 @@ public class PythonEditorPage {
 	
 	@FindBy(xpath="//button[text()='Run']")
 	@CacheLookup
-	WebElement btnrun;
+	WebElement RUNBTN;
+	
+	@FindBy(xpath = "//a[contains(@href,'/tryEditor')]")
+	@CacheLookup
+	private static WebElement TRYHERE_BTN;
+	
+	private String EDITOR_URL = "https://dsportalapp.herokuapp.com/tryEditor";
 	  
     public void enterValidCode() {
 		ldriver.findElement(By.cssSelector(".CodeMirror-scroll")).click();
@@ -85,10 +91,19 @@ public class PythonEditorPage {
 		return result;
 
 	}
+	
+	public boolean editorPgIsDisplayed() {
+		boolean result = ldriver.getCurrentUrl().equalsIgnoreCase(EDITOR_URL);
+		return result;
+	}
     
     public void clickRun() {
-    	btnrun.click();
+    	RUNBTN.click();
        
     }
+    
+     public  void clickTryHere() {
+		TRYHERE_BTN.click();
+	}
 
 }
