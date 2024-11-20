@@ -44,7 +44,7 @@ public class DataStructureTestCase extends BaseClass{
 		ds.clickDSStarted();
 		 boolean result=ds.ValidateURL("https://dsportalapp.herokuapp.com/data-structures-introduction/" );
 		 SignInPage sp = new SignInPage(DriverManager.getDriver());
-		 sp.Click_Signout();
+		 //sp.Click_Signout();
 		 Assert.assertTrue(result);
 		 
 		
@@ -64,7 +64,7 @@ public class DataStructureTestCase extends BaseClass{
 	     ds.clickTimeComplexity();
 	     boolean result=ds.ValidateURL("https://dsportalapp.herokuapp.com/data-structures-introduction/time-complexity/" );
 	     SignInPage sp = new SignInPage(DriverManager.getDriver());
-			sp.Click_Signout();
+			//sp.Click_Signout();
 		 Assert.assertTrue(result);
 	
 }
@@ -81,7 +81,7 @@ public class DataStructureTestCase extends BaseClass{
 		ds.clickTryHere();
 		boolean result=ds.ValidateURL("https://dsportalapp.herokuapp.com/tryEditor" );
 		DriverManager.getDriver().navigate().back();
-		sp.Click_Signout();
+		//sp.Click_Signout();
 		Assert.assertTrue(result);
 		
 		
@@ -104,7 +104,7 @@ public class DataStructureTestCase extends BaseClass{
 		pe.clickRun();
 		boolean result=pe.ValidateOutput();
 		DriverManager.getDriver().navigate().back();
-		sp.Click_Signout();
+		//sp.Click_Signout();
 		Assert.assertTrue(result);
 		
 	}
@@ -124,7 +124,7 @@ public class DataStructureTestCase extends BaseClass{
 		pe.clickRun();
 		boolean result=pe.alertMsgIsDisplayed();
 		DriverManager.getDriver().navigate().back();
-		sp.Click_Signout();
+		//sp.Click_Signout();
 		Assert.assertTrue(result);
 		
 	}
