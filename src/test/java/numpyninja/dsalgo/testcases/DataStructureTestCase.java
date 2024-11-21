@@ -44,7 +44,7 @@ public class DataStructureTestCase extends BaseClass{
 		ds.clickDSStarted();
 		 boolean result=ds.ValidateURL("https://dsportalapp.herokuapp.com/data-structures-introduction/" );
 		 SignInPage sp = new SignInPage(DriverManager.getDriver());
-		 //sp.Click_Signout();
+		 sp.signout();
 		 Assert.assertTrue(result);
 		 
 		
@@ -64,7 +64,7 @@ public class DataStructureTestCase extends BaseClass{
 	     ds.clickTimeComplexity();
 	     boolean result=ds.ValidateURL("https://dsportalapp.herokuapp.com/data-structures-introduction/time-complexity/" );
 	     SignInPage sp = new SignInPage(DriverManager.getDriver());
-			//sp.Click_Signout();
+		 sp.signout();
 		 Assert.assertTrue(result);
 	
 }
@@ -81,7 +81,7 @@ public class DataStructureTestCase extends BaseClass{
 		ds.clickTryHere();
 		boolean result=ds.ValidateURL("https://dsportalapp.herokuapp.com/tryEditor" );
 		DriverManager.getDriver().navigate().back();
-		//sp.Click_Signout();
+		sp.signout();
 		Assert.assertTrue(result);
 		
 		
@@ -104,7 +104,7 @@ public class DataStructureTestCase extends BaseClass{
 		pe.clickRun();
 		boolean result=pe.ValidateOutput();
 		DriverManager.getDriver().navigate().back();
-		//sp.Click_Signout();
+		sp.signout();
 		Assert.assertTrue(result);
 		
 	}
@@ -116,7 +116,7 @@ public class DataStructureTestCase extends BaseClass{
 		PythonEditorPage pe=new PythonEditorPage(DriverManager.getDriver());
 		SignInPage sp = new SignInPage(DriverManager.getDriver());
 		DataStructurePage ds=new DataStructurePage(DriverManager.getDriver());
-		LoggerLoad.info("I am inside the DataStructureTestcase 4");
+		LoggerLoad.info("I am inside the DataStructureTestcase 5");
 		ds.clickDSStarted();
 		ds.clickTimeComplexity();
 		ds.clickTryHere();
@@ -124,13 +124,46 @@ public class DataStructureTestCase extends BaseClass{
 		pe.clickRun();
 		boolean result=pe.alertMsgIsDisplayed();
 		DriverManager.getDriver().navigate().back();
-		//sp.Click_Signout();
+		sp.signout();
 		Assert.assertTrue(result);
 		
 	}
 	
 	
+	@Test(priority=6)
+	public void EnteringNoPythoncode() {
+
+		PythonEditorPage pe=new PythonEditorPage(DriverManager.getDriver());
+		SignInPage sp = new SignInPage(DriverManager.getDriver());
+		DataStructurePage ds=new DataStructurePage(DriverManager.getDriver());
+		LoggerLoad.info("I am inside the DataStructureTestcase 6");
+		ds.clickDSStarted();
+		ds.clickTimeComplexity();
+		ds.clickTryHere();
+		pe.noCodeEntered();
+		pe.clickRun();
+		DriverManager.getDriver().navigate().back();
+		sp.signout();
+		
+		
+	}
 	
+	
+	@Test(priority=7)
+	public void verifyingPracticeQuestionsLink() {
+
+		
+		SignInPage sp = new SignInPage(DriverManager.getDriver());
+		DataStructurePage ds=new DataStructurePage(DriverManager.getDriver());
+		LoggerLoad.info("I am inside the DataStructureTestcase 7");
+		ds.clickDSStarted();
+		ds.clickTimeComplexity();
+		ds.clickPracticeQuestions();
+	    DriverManager.getDriver().navigate().back();
+		sp.signout();
+		Assert.assertTrue(false);
+		
+	}
 	
 	
 	
