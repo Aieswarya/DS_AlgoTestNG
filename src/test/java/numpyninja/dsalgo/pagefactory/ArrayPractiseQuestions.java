@@ -11,6 +11,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -177,10 +178,17 @@ public class ArrayPractiseQuestions extends BasePage {
 				
 			ANSWER_FORM.click();
 			String[] str1 = code.split("\\\\n");
-
 			
-			TRY_HERE_EDITOR.sendKeys(Keys.CONTROL+"a");
+
+			for(String i:str1) {
+				
+				System.out.println(i);
+				
+			}
+			
+			TRY_HERE_EDITOR.sendKeys(Keys.COMMAND+"a");
 			TRY_HERE_EDITOR.sendKeys(Keys.DELETE);
+			//new Actions(DriverManager.getDriver()).keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();
 			
 			for (int i = 0; i < str1.length; i++) {
 				
@@ -190,7 +198,7 @@ public class ArrayPractiseQuestions extends BasePage {
 				} else {
 					TRY_HERE_EDITOR.sendKeys(str1[i]);
 					TRY_HERE_EDITOR.sendKeys(Keys.ENTER);
-					
+					System.out.println("code is "+ str1[i]);
 				}
 			}
 			
