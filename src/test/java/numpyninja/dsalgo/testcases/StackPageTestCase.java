@@ -34,7 +34,7 @@ public class StackPageTestCase extends BaseClass {
 
 	}
 
-	@Test(priority = 1, dataProvider = "Stacktypes")
+	@Test(dataProvider = "Stacktypes")
 	public void verify_pagenavigation_for_Stacktypes(String type) {
 
 		LoggerLoad.info("TestCase : Check Stack Page Navigation from Stack Home Page");
@@ -69,7 +69,7 @@ public class StackPageTestCase extends BaseClass {
 
 	}
 
-	@Test(priority = 2, dataProvider = "Stacktypes")
+	@Test(dataProvider = "Stacktypes")
 	public void verify_pythonEditorPageNavigation_for_Stacktypes(String type) {
 		LoggerLoad.info("TestCase : Check Stack Python Editor Page Navigation from Stack Home Page");
 		StackPage stp = new StackPage(DriverManager.getDriver());
@@ -98,7 +98,7 @@ public class StackPageTestCase extends BaseClass {
 
 	}
 
-	@Test(priority = 3, dataProvider = "Stacktypes")
+	@Test(dataProvider = "Stacktypes")
 	public void verify_pythonEditor_for_noCodeSubmission(String type) {
 		LoggerLoad.info("TestCase : Check Stack Python Editor for No Code Submission");
 		StackPage stp = new StackPage(DriverManager.getDriver());
@@ -127,7 +127,7 @@ public class StackPageTestCase extends BaseClass {
 
 	}
 
-	@Test(priority = 4, dataProvider = "Stacktypes")
+	@Test(dataProvider = "Stacktypes")
 	public void verify_pythonEditor_for_InvalidCodeSubmission(String type) {
 		LoggerLoad.info("TestCase : Check Stack Python Editor for Invalid Code Submission");
 		StackPage stp = new StackPage(DriverManager.getDriver());
@@ -157,7 +157,7 @@ public class StackPageTestCase extends BaseClass {
 		LoggerLoad.info("The user should see alert message for Invalid code ");
 	}
 
-	@Test(priority = 5, dataProvider = "Stacktypes")
+	@Test(dataProvider = "Stacktypes")
 	public void verify_pythonEditor_for_ValidCodeSubmission(String type) {
 		LoggerLoad.info("TestCase : Check Stack Python Editor for Valid Code submission");
 		StackPage stp = new StackPage(DriverManager.getDriver());

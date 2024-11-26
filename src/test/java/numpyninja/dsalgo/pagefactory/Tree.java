@@ -80,13 +80,29 @@ public class Tree {
 	public void click_TreeTraversals() {TREE_TRAVERSALS_LK.click();}
 	public void click_TraversalsIllustrations(){TRAVERSALS_ILLUSTRATION_LK.click();}
 	public void click_BinaryTree() {BINARY_TREE_LK.click();}
-	public void click_TypesOfBinaryTree() {TYPES_OF_BINARY_TREE_LK.click();}
+	
+	public void click_TypesOfBinaryTree() {
+		System.out.println("I entered click type of Binary Tree");
+		TYPES_OF_BINARY_TREE_LK.click();
+		System.out.println("I  clicked type of Binary Tree");
+	}
+	
 	public void click_ImplementationInPython() {IMPLEMENTATION_IN_PYTHON_LK.click();}
 	public void click_BinaryTreeTraversals() {BINARY_TREE_TRAVERSALS.click();}
 	public void click_ImplementationOfBinaryTrees() {IMPLEMENTATION_OF_BINARY_TREES.click();}
 	public void click_ApplicationsofBinaryTree() {APPLICATIONS_OF_BINARY_TREE_LK.click();}
-	public void click_BinarySearchTree() {BINARY_SEARCH_TREE_LK.click();}
-	public void click_ImplementationOfBST() {IMPLEMENTATION_OF_BST_LK.click();}
+	
+	public void click_BinarySearchTree() {
+		System.out.println("I entered click type of Binary Search Tree");
+		BINARY_SEARCH_TREE_LK.click();
+		System.out.println("I  clicked type of Binary Search Tree\"");}
+	
+	public void click_ImplementationOfBST() {
+		System.out.println("I entered click type of Implementation of Binary ST");
+		IMPLEMENTATION_OF_BST_LK.click();
+		System.out.println("I  clicked type of Implementation of Binary ST");	
+	}
+	
 	public void click_PractiseQuestions() {PRACTISE_QUESTIONS.click();}
 	
 	public boolean Validate_OverviewOfTreePage() {
@@ -103,8 +119,6 @@ public class Tree {
 		return result;}
 	public boolean Validate_TraversalsIllustrationPage() {
 		result = tdriver.getCurrentUrl().equalsIgnoreCase(TRAVERSALS_ILLUSTRATION_URL);
-		System.out.println("Inside then of Tree Traversals"+ result);
-		System.out.println("Inside then of Tree Traversals"+ tdriver.getCurrentUrl());
 		
 		return result;
 		}

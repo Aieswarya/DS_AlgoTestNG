@@ -29,7 +29,7 @@ public class DataStructureTestCase extends BaseClass {
 		ds.navigateDSHomepage();
 	}
 
-	@Test(priority = 1)
+	@Test
 
 	public void Navigate_DataStructureHomepage()
 
@@ -44,7 +44,7 @@ public class DataStructureTestCase extends BaseClass {
 
 	}
 
-	@Test(priority = 2)
+	@Test
 
 	public void Navigate_TimeComplexityPage()
 
@@ -54,14 +54,13 @@ public class DataStructureTestCase extends BaseClass {
 		LoggerLoad.info("I am inside the DataStructureTestcase 2");
 		ds.clickDSStarted();
 		ds.clickTimeComplexity();
-		boolean result = ds
-				.ValidateURL("https://dsportalapp.herokuapp.com/data-structures-introduction/time-complexity/");
+		boolean result = ds.ValidateURL("https://dsportalapp.herokuapp.com/data-structures-introduction/time-complexity/");
 		SignInPage sp = new SignInPage(DriverManager.getDriver());
 		Assert.assertTrue(result);
 
 	}
 
-	@Test(priority = 3)
+	@Test
 
 	public void Navigate_PythonEditorPage() {
 
@@ -76,7 +75,7 @@ public class DataStructureTestCase extends BaseClass {
 
 	}
 
-	@Test(priority = 4)
+	@Test
 
 	public void EnteringValidPythoncode() {
 
@@ -94,7 +93,7 @@ public class DataStructureTestCase extends BaseClass {
 
 	}
 
-	@Test(priority = 5)
+	@Test
 	public void EnteringInValidPythoncode() {
 
 		PythonEditorPage pe = new PythonEditorPage(DriverManager.getDriver());
@@ -111,7 +110,7 @@ public class DataStructureTestCase extends BaseClass {
 
 	}
 
-	@Test(priority = 6)
+	@Test
 	public void EnteringNoPythoncode() {
 
 		PythonEditorPage pe = new PythonEditorPage(DriverManager.getDriver());
@@ -126,7 +125,7 @@ public class DataStructureTestCase extends BaseClass {
 
 	}
 
-	@Test(priority = 7, retryAnalyzer = RetryAnalyzer.class)
+	@Test( retryAnalyzer = RetryAnalyzer.class)
 	public void verifyingPracticeQuestionsLink() {
 
 		SignInPage sp = new SignInPage(DriverManager.getDriver());

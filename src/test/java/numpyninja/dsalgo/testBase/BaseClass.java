@@ -22,7 +22,7 @@ public class BaseClass {
 			PropertiesConfig propertiesConfig = new PropertiesConfig();
 			propertiesConfig.loadProperties();
 			ExcelUtils excelutils = new ExcelUtils();
-			ExcelUtils.getLogin();
+			ExcelUtils.readExcelData();
 			DriverManager.launchBrowser();
 			DriverManager.getDriver().manage().deleteAllCookies();
 			DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -54,7 +54,7 @@ public class BaseClass {
 			PropertiesConfig propertiesConfig = new PropertiesConfig();
 			propertiesConfig.loadProperties();
 			ExcelUtils excelutils = new ExcelUtils();
-			ExcelUtils.getLogin();
+			ExcelUtils.readExcelData();
 			DriverManager.setcrossbrowser(browser);
 			DriverManager.getDriver().manage().deleteAllCookies();
 			DriverManager.getDriver().manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

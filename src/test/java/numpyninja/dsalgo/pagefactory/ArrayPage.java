@@ -11,6 +11,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import numpyninja.dsalgo.constants.Constants;
+import numpyninja.dsalgo.webdrivermanager.DriverManager;
 
 public class ArrayPage {
 	  
@@ -34,39 +35,39 @@ public class ArrayPage {
 	  
 	  @FindBy (xpath="//a[@href='array']")
 	  @CacheLookup
-	  public WebElement getStarted;
+	  public WebElement ARRAY_GETSTARTED;
 	  
 	  @FindBy (xpath="//*[contains(@href,'tryEditor')]")
 	  @CacheLookup
-	  public WebElement editor;
+	  public WebElement TRY_HERE;
 	  
 	  @FindBy (xpath="//*[contains(@href,'arrays-in-python')]")
 	  @CacheLookup
-	  public WebElement arraysInPython; 
+	  public WebElement ARRAYS_IN_PYTHON; 
 	  
 	  @FindBy (xpath="//*[contains(@href,'arrays-using-list')]")
 	  @CacheLookup
-	  public WebElement arraysUsingList;
+	  public WebElement ARRAYS_USING_LIST;
 	  
 	  @FindBy (xpath="//*[contains(@href,'basic-operations-in-lists')]")
 	  @CacheLookup
-	  public WebElement arraysBasicList;
+	  public WebElement BASIC_OPS_IN_LIST;
 	  
 	  @FindBy (xpath="//*[contains(@href,'applications-of-array')]")
 	  @CacheLookup
-	  public WebElement arraysApps;
+	  public WebElement APPLICATIONS_OF_ARRAY;
 	  
 	  @FindBy (xpath="//*[contains(@href,'practice')]")
 	  @CacheLookup
-	  public WebElement practice;
+	  public WebElement PRACTISE_QUESTIONS;
 	  
 	  @FindBy (xpath="//*[@id='answer_form']/div/div")
 	  @CacheLookup
-	  public WebElement pythonEditor;
+	  public WebElement PYTHON_EDITOR;
 	  
 	  @FindBy (xpath="//*[@id='answer_form']/button")
 	  @CacheLookup
-	  public WebElement pythonRun;
+	  public WebElement RUN;
 	  
 	public void enterInValidCode() {
 		gdriver.findElement(By.cssSelector(".CodeMirror-scroll")).click();
@@ -74,7 +75,7 @@ public class ArrayPage {
 		js.executeScript("window.scrollTo(0,0)");
 		gdriver.findElement(By.cssSelector("div:nth-child(1) > textarea"))
 				.sendKeys("Print " + constants.PYTHON_EDITOR_INPUT);
-		pythonRun.click();
+		RUN.click();
 	}
 
 	public void enterValidCode() {
@@ -83,7 +84,7 @@ public class ArrayPage {
 		js.executeScript("window.scrollTo(0,0)");
 		gdriver.findElement(By.cssSelector("div:nth-child(1) > textarea"))
 				.sendKeys("print" + constants.PYTHON_EDITOR_INPUT);
-		pythonRun.click();
+		RUN.click();
 	}
 
 	public boolean ValidateOutput() {
@@ -98,7 +99,7 @@ public class ArrayPage {
 	}
 	
 	public void run() {
-		pythonRun.click();
+		RUN.click();
 	}
 
 	public boolean alertMsgIsDisplayed() {
@@ -111,5 +112,30 @@ public class ArrayPage {
 			exception.printStackTrace();
 		}
 		return result;
+	}
+	
+	public void click_ApplicationsOfArray()
+	
+	{APPLICATIONS_OF_ARRAY.click();}
+	
+	public void click_ArraysInPython() {ARRAYS_IN_PYTHON.click();}
+	public void click_BasicOpsInList() {BASIC_OPS_IN_LIST.click();}
+	public void click_ArraysUsingList() {ARRAYS_USING_LIST.click();}
+	public void click_PractiseQuestions() {PRACTISE_QUESTIONS.click();}
+	
+	
+	public boolean Validate_ArrayInPython_URL() {
+		boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(ARRAY_PYTHON_URL);
+		return RESULT;
+	}
+	public boolean Validate_ArraysUsingList_URL() {
+		boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(ARRAY_LIST_URL);
+		return RESULT;
+	}
+	public boolean Validate_BasicOpsInList_URL() {boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(ARRAY_BASIC_URL);
+	return RESULT;}
+	public boolean Validate_ApplicationsOfArray_URL() {
+		boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(ARRAY_APPS_URL);
+		return RESULT;
 	}
 }
