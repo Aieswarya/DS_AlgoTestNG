@@ -1,6 +1,6 @@
 package numpyninja.dsalgo.pagefactory;
 
-import org.junit.runners.model.Statement;
+
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
