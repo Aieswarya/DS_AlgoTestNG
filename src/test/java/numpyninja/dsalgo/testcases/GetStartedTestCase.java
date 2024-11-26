@@ -11,8 +11,7 @@ import numpyninja.dsalgo.webdrivermanager.DriverManager;
 import numpyninja.dsalgo.utilities.LoggerLoad;
 
 public class GetStartedTestCase extends BaseClass {
-	private static final Logger LOGGER = LogManager.getLogger(GetStartedTestCase.class);
-
+	
 	@Test(priority=0)
 	public void user_clicks_the_get_started_button_at_start_page() {
 

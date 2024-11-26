@@ -19,7 +19,7 @@ public class HomePageTestCase extends BaseClass {
 	
 	
 	@BeforeMethod
-	public static void beforemethod()
+	public  void beforemethod()
 	{
 		HomePage hp = new HomePage(DriverManager.getDriver());
 		DriverManager.getDriver().get(Constants.APP_URL);

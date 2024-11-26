@@ -23,7 +23,7 @@ public class SignInTestCase extends BaseClass {
 	String username;
 	String password;
 	String message;
-	private static final Logger LOGGER = LogManager.getLogger(SignInTestCase.class);
+	
 	Constants constant = new Constants();
 
 	@BeforeMethod

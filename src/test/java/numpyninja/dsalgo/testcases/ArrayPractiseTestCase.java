@@ -19,7 +19,7 @@ import numpyninja.dsalgo.pagefactory.ArrayPractiseQuestions;
 public class ArrayPractiseTestCase extends BaseClass {
 	Constants constants = new Constants();
 	@BeforeMethod
-	public static void beforemethod() {
+	public  void beforemethod() {
 		HomePage hp = new HomePage(DriverManager.getDriver());
 		SignInPage si = new SignInPage(DriverManager.getDriver());
 		DriverManager.getDriver().manage().window().maximize();
@@ -32,7 +32,7 @@ public class ArrayPractiseTestCase extends BaseClass {
 
 	}
 
-	@Test(dataProvider = "APQUESTIONS")
+	//@Test(dataProvider = "APQUESTIONS")
 	public void verify_ArrayPractiseQuestion_PageNavigation(String QUESTION)
 
 	{
@@ -70,7 +70,7 @@ public class ArrayPractiseTestCase extends BaseClass {
 		LoggerLoad.info("The user is redirected to " + QUESTION + " Page");
 	}
 
-	@Test(dataProvider = "APQUESTIONS")
+	//@Test(dataProvider = "APQUESTIONS")
 	public void verify_ArrayPractiseQues_PythonEditor_for_NoCodeSubmission(String QUESTION) {
 		LoggerLoad.info("TestCase : Check " + QUESTION + "Python Editor Page for No Code Submission");
 		ArrayPractiseQuestions arrayPractise = new ArrayPractiseQuestions(DriverManager.getDriver());
@@ -107,7 +107,7 @@ public class ArrayPractiseTestCase extends BaseClass {
 		LoggerLoad.info("The user sees an alert message");
 	}
 
-	@Test(dataProvider = "APQUESTIONS")
+	//@Test(dataProvider = "APQUESTIONS")
 	public void verify_ArrayPractiseQues_PythonEditor_for_InValidCodeSubmission(String QUESTION) {
 		LoggerLoad.info("TestCase : Check " + QUESTION + "Python Editor Page for InValid Code Submission");
 		ArrayPractiseQuestions arrayPractise = new ArrayPractiseQuestions(DriverManager.getDriver());

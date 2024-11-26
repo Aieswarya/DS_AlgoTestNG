@@ -21,7 +21,7 @@ import numpyninja.dsalgo.webdrivermanager.DriverManager;
 public class QueueTestCase extends BaseClass {
 
 	@BeforeMethod
-	public static void beforemethod() {
+	public  void beforemethod() {
 		HomePage hp = new HomePage(DriverManager.getDriver());
 		SignInPage si = new SignInPage(DriverManager.getDriver());
 		QueuePage qp = new QueuePage(DriverManager.getDriver());
