@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="DS_AlgoTestNG Suite" parallel="tests">
+<suite name="DS_AlgoTestNG Suite" >
+<!-- <suite name="DS_AlgoTestNG Suite" parallel="tests" thread-count="2" > -->
 <listeners>
   <listener class-name="numpyninja.dsalgo.utilities.ExtentreportsListener"/>
   <listener class-name="numpyninja.dsalgo.utilities.AllureExecutionListener"/>
@@ -18,8 +19,8 @@
 <class name="numpyninja.dsalgo.testcases.GraphTestCase"></class>
 <class name="numpyninja.dsalgo.testcases.LinkedListTestCase"></class>
 <class name="numpyninja.dsalgo.testcases.ArrayTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.TreeTestCase"></class> 
 <class name="numpyninja.dsalgo.testcases.ArrayPractiseTestCase"></class>
-<class name="numpyninja.dsalgo.testcases.TreeTestCase"></class>
 </classes>
 </test> 
 
