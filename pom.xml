@@ -166,7 +166,19 @@
 						<argLine>
 							-javaagent:"${settings.localRepository}/org/aspectj/aspectjweaver/${aspectj.version}/aspectjweaver-${aspectj.version}.jar"
 						</argLine>
-					</configuration>
+	              <parallel>methods</parallel>
+	            <!--  <useUnlimitedThreads>true</useUnlimitedThreads> -->
+	              <suiteXmlFiles>
+					  <suiteXmlFile>testng.xml</suiteXmlFile>
+				  </suiteXmlFiles>
+				  
+				  <properties>
+				       <property>
+				          <name>data-provider-thread-count</name>
+				          <value>2</value>
+				       </property>
+				  </properties>
+				  </configuration>
 
 				</plugin>
 
