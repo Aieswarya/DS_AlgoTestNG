@@ -16,110 +16,98 @@ import org.apache.logging.log4j.Logger;
 
 import numpyninja.dsalgo.constants.Constants;
 
-
 public class DataStructurePage {
 
-public WebDriver ldriver;
-	
+	public WebDriver ldriver;
+
 	public DataStructurePage(WebDriver rdriver) {
-	
-		    ldriver=rdriver;
-		    PageFactory.initElements(rdriver, this);
-	
+
+		ldriver = rdriver;
+		PageFactory.initElements(rdriver, this);
+
 	}
-	
-	Constants con=new Constants();
-	private static final Logger LOGGER= LogManager.getLogger(DataStructurePage.class);
-	
-	//-------------------------Web Elements----------------------------------------//
-	
-	
-	@FindBy(xpath="//a[@href='data-structures-introduction']")
+
+	Constants con = new Constants();
+	private static final Logger LOGGER = LogManager.getLogger(DataStructurePage.class);
+
+	// -------------------------Web
+	// Elements----------------------------------------//
+
+	@FindBy(xpath = "//a[@href='data-structures-introduction']")
 	@CacheLookup
 	WebElement btngetstarted;
-	
-	@FindBy(xpath ="//a[@href='time-complexity']")
+
+	@FindBy(xpath = "//a[@href='time-complexity']")
 	@CacheLookup
 	WebElement btntimecomplx;
-	
-	@FindBy(xpath="//a[@href='/tryEditor']")
+
+	@FindBy(xpath = "//a[@href='/tryEditor']")
 	@CacheLookup
 	WebElement btntryhere;
-	
-	
-	@FindBy(xpath="//button[text()='Run']")
+
+	@FindBy(xpath = "//button[text()='Run']")
 	@CacheLookup
 	WebElement btnrun;
-	
-	
-	
-    @FindBy(xpath="//a[normalize-space()='Practice Questions']")
-    @CacheLookup
-    WebElement btnprcques;
-    
-    //--------------------------------------Methods Implementation----------------------------------------//
-    
-   
-    public void navigateDSHomepage() {
-    	
-    	SignInPage sp=new SignInPage(ldriver);
-    	sp.clickSignIn();
-    	sp.ValidCredentials();
-    	sp.clickLogin();
-    	
-    	
-    }
-    
-    public void clickDSStarted() {
-    	ldriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-    	btngetstarted.click();
-    	
-    }
-    
-    public boolean ValidateURL(String expURL) {
-    	
-    	boolean result=false;
-    	
-    	if(ldriver.getCurrentUrl().equalsIgnoreCase(expURL)) {
-    		
-    		result=true;
-    	}
-    	return result;
-    
-    }
-    
-    
-    public void clickTimeComplexity() {
-    	ldriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-    	btntimecomplx.click();
-    	
-    }
-    
-    public void clickTryHere() {
-    	btntryhere.click();
-    }
-    
-    
-    public void enterValidCode() {
+
+	@FindBy(xpath = "//a[normalize-space()='Practice Questions']")
+	@CacheLookup
+	WebElement btnprcques;
+
+	// --------------------------------------Methods
+	// Implementation----------------------------------------//
+
+	public void navigateDSHomepage() {
+
+		SignInPage sp = new SignInPage(ldriver);
+		sp.clickSignIn();
+		sp.ValidCredentials();
+		sp.clickLogin();
+
+	}
+
+	public void clickDSStarted() {
+		ldriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		btngetstarted.click();
+
+	}
+
+	public boolean ValidateURL(String expURL) {
+
+		boolean result = false;
+
+		if (ldriver.getCurrentUrl().equalsIgnoreCase(expURL)) {
+
+			result = true;
+		}
+		return result;
+
+	}
+
+	public void clickTimeComplexity() {
+		ldriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		btntimecomplx.click();
+
+	}
+
+	public void clickTryHere() {
+		btntryhere.click();
+	}
+
+	public void enterValidCode() {
 		ldriver.findElement(By.cssSelector(".CodeMirror-scroll")).click();
 		JavascriptExecutor js = (JavascriptExecutor) ldriver;
 		js.executeScript("window.scrollTo(0,0)");
-		ldriver.findElement(By.cssSelector("div:nth-child(1) > textarea"))
-				.sendKeys("print" + con.PYTHON_EDITOR_INPUT);
+		ldriver.findElement(By.cssSelector("div:nth-child(1) > textarea")).sendKeys("print" + con.PYTHON_EDITOR_INPUT);
 
 	}
-	
-	
+
 	public void enterInValidCode() {
 		ldriver.findElement(By.cssSelector(".CodeMirror-scroll")).click();
 		JavascriptExecutor js = (JavascriptExecutor) ldriver;
 		js.executeScript("window.scrollTo(0,0)");
-		ldriver.findElement(By.cssSelector("div:nth-child(1) > textarea"))
-				.sendKeys("Print " + con.PYTHON_EDITOR_INPUT);
+		ldriver.findElement(By.cssSelector("div:nth-child(1) > textarea")).sendKeys("Print " + con.PYTHON_EDITOR_INPUT);
 
 	}
-
-	
 
 	public void noCodeEntered() {
 		ldriver.findElement(By.cssSelector(".CodeMirror-scroll")).click();
@@ -156,18 +144,15 @@ public WebDriver ldriver;
 		return result;
 
 	}
-    
-    public void clickRun() {
-    	btnrun.click();
-       
-    }
-  
-   
-    public void clickPracticeQuestions() {
-    	ldriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
-    	btnprcques.click();
-    }
-    
-}
-	
 
+	public void clickRun() {
+		btnrun.click();
+
+	}
+
+	public void clickPracticeQuestions() {
+		ldriver.manage().timeouts().implicitlyWait(Duration.ofSeconds(20));
+		btnprcques.click();
+	}
+
+}

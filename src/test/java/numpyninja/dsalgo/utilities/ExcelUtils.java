@@ -66,57 +66,98 @@ public FileInputStream fi;
 			constants.SQUARES_OF_SORTED_ARRAY_INVALID_CODE=ARRAY_PRACTISE_SHEET.getRow(6).getCell(0).getStringCellValue();
 			
 			constants.ARRAY_PRACTISE_SUCCESS_MSG=ARRAY_PRACTISE_SHEET.getRow(0).getCell(0).getStringCellValue();
-			
-			constants.HOME = URL_SHEET.getRow(0).getCell(1).getStringCellValue();
-			constants.ARRAY_PAGE_URL = URL_SHEET.getRow(1).getCell(1).getStringCellValue();
-			constants.ARRAY_PYTHON_URL = URL_SHEET.getRow(2).getCell(1).getStringCellValue();
-			constants.ARRAY_LIST_URL = URL_SHEET.getRow(3).getCell(1).getStringCellValue();
-			constants.ARRAY_BASIC_URL = URL_SHEET.getRow(4).getCell(1).getStringCellValue();
-			constants.ARRAY_APPS_URL = URL_SHEET.getRow(5).getCell(1).getStringCellValue();
-			constants.ARRAY_PRACTICE = URL_SHEET.getRow(6).getCell(1).getStringCellValue();
-			constants.EDITOR = URL_SHEET.getRow(7).getCell(1).getStringCellValue();
-			
-			constants.SEARCH_THE_ARRAY_URL=URL_SHEET.getRow(8).getCell(1).getStringCellValue();
-			constants.MAX_CONSECUTIVES_URL=URL_SHEET.getRow(9).getCell(1).getStringCellValue();
-			constants.FIND_NUM_WITH_EVEN_DIGITS_URL=URL_SHEET.getRow(10).getCell(1).getStringCellValue();
-			constants.SQUARES_OF_A_SORTED_ARRAY_URL=URL_SHEET.getRow(11).getCell(1).getStringCellValue();
-			
-			
-			constants.GRAPHPG_URL = URL_SHEET.getRow(12).getCell(0).getStringCellValue();
-			constants.GRAPHREP_URL = URL_SHEET.getRow(13).getCell(0).getStringCellValue();
-			constants.EDITOR_URL = URL_SHEET.getRow(14).getCell(0).getStringCellValue();
-			
-			constants.dsintropage = URL_SHEET.getRow(15).getCell(0).getStringCellValue();
-			constants.arraypage =URL_SHEET.getRow(16).getCell(0).getStringCellValue();
-			constants.llpage = URL_SHEET.getRow(17).getCell(0).getStringCellValue();
-			constants.stackpage = URL_SHEET.getRow(18).getCell(0).getStringCellValue();
-			constants.queuepage =URL_SHEET.getRow(19).getCell(0).getStringCellValue();
-			constants.treepage = URL_SHEET.getRow(20).getCell(0).getStringCellValue();
-			constants.graphpage =URL_SHEET.getRow(21).getCell(0).getStringCellValue();
-			constants.gspage = URL_SHEET.getRow(22).getCell(0).getStringCellValue();
-			
-			constants.LLINTRO_URL =URL_SHEET.getRow(23).getCell(0).getStringCellValue();
-			constants.CREATE_LL_URL = URL_SHEET.getRow(24).getCell(0).getStringCellValue();
-			constants.TYPE_OF_LL_URL = URL_SHEET.getRow(25).getCell(0).getStringCellValue();
-			constants.IMPLEMENT_LL_URL =URL_SHEET.getRow(26).getCell(0).getStringCellValue();
-			constants.TRAVERSE_LL_URL = URL_SHEET.getRow(27).getCell(0).getStringCellValue();
-			constants.INSERTION_LL_URL =URL_SHEET.getRow(28).getCell(0).getStringCellValue();
-			constants.DELETION_LL_URL = URL_SHEET.getRow(29).getCell(0).getStringCellValue();
-
-			constants.OVERVIEW_OF_TREE_URL=URL_SHEET.getRow(30).getCell(0).getStringCellValue();
-			constants.TERMINOLOGIES_URL=URL_SHEET.getRow(31).getCell(0).getStringCellValue();
-			constants.TYPES_OF_TREES_URL=URL_SHEET.getRow(32).getCell(0).getStringCellValue();
-			constants.TREE_TRAVERSALS_URL=URL_SHEET.getRow(33).getCell(0).getStringCellValue();
-			constants.TRAVERSALS_ILLUSTRATION_URL=URL_SHEET.getRow(34).getCell(0).getStringCellValue();
-			constants.BINARY_TREE_URL=URL_SHEET.getRow(35).getCell(0).getStringCellValue();
-			constants.TYPES_OF_BINARY_TREE_URL=URL_SHEET.getRow(36).getCell(0).getStringCellValue();
-			constants.IMPLEMENTATION_IN_PYTHON_URL=URL_SHEET.getRow(37).getCell(0).getStringCellValue();
-			constants.BINARY_TREE_TRAVERSALS_URL=URL_SHEET.getRow(38).getCell(0).getStringCellValue();
-			constants.IMPLEMENTATION_OF_BINARY_TREES_URL=URL_SHEET.getRow(39).getCell(0).getStringCellValue();
-			constants.APPLICATIONS_OF_BINARY_TREES_URL=URL_SHEET.getRow(40).getCell(0).getStringCellValue();
-			constants.BINARY_SEARCH_TREE_URL=URL_SHEET.getRow(41).getCell(0).getStringCellValue();
-			constants.IMPLEMENTATION_OF_BST_URL=URL_SHEET.getRow(42).getCell(0).getStringCellValue();
-			
+			/*
+			 * constants.HOME = URL_SHEET.getRow(0).getCell(1).getStringCellValue();
+			 * constants.ARRAY_PAGE_URL =
+			 * URL_SHEET.getRow(1).getCell(1).getStringCellValue();
+			 * constants.ARRAY_PYTHON_URL =
+			 * URL_SHEET.getRow(2).getCell(1).getStringCellValue(); constants.ARRAY_LIST_URL
+			 * = URL_SHEET.getRow(3).getCell(1).getStringCellValue();
+			 * constants.ARRAY_BASIC_URL =
+			 * URL_SHEET.getRow(4).getCell(1).getStringCellValue(); constants.ARRAY_APPS_URL
+			 * = URL_SHEET.getRow(5).getCell(1).getStringCellValue();
+			 * constants.ARRAY_PRACTICE =
+			 * URL_SHEET.getRow(6).getCell(1).getStringCellValue(); constants.EDITOR =
+			 * URL_SHEET.getRow(7).getCell(1).getStringCellValue();
+			 * 
+			 * constants.SEARCH_THE_ARRAY_URL=URL_SHEET.getRow(8).getCell(1).
+			 * getStringCellValue();
+			 * constants.MAX_CONSECUTIVES_URL=URL_SHEET.getRow(9).getCell(1).
+			 * getStringCellValue();
+			 * constants.FIND_NUM_WITH_EVEN_DIGITS_URL=URL_SHEET.getRow(10).getCell(1).
+			 * getStringCellValue();
+			 * constants.SQUARES_OF_A_SORTED_ARRAY_URL=URL_SHEET.getRow(11).getCell(1).
+			 * getStringCellValue();
+			 * 
+			 * 
+			 * constants.GRAPHPG_URL = URL_SHEET.getRow(12).getCell(0).getStringCellValue();
+			 * constants.GRAPHREP_URL =
+			 * URL_SHEET.getRow(13).getCell(0).getStringCellValue(); constants.EDITOR_URL =
+			 * URL_SHEET.getRow(14).getCell(0).getStringCellValue();
+			 * 
+			 * constants.dsintropage = URL_SHEET.getRow(15).getCell(0).getStringCellValue();
+			 * constants.arraypage =URL_SHEET.getRow(16).getCell(0).getStringCellValue();
+			 * constants.llpage = URL_SHEET.getRow(17).getCell(0).getStringCellValue();
+			 * constants.stackpage = URL_SHEET.getRow(18).getCell(0).getStringCellValue();
+			 * constants.queuepage =URL_SHEET.getRow(19).getCell(0).getStringCellValue();
+			 * constants.treepage = URL_SHEET.getRow(20).getCell(0).getStringCellValue();
+			 * constants.graphpage =URL_SHEET.getRow(21).getCell(0).getStringCellValue();
+			 * constants.gspage = URL_SHEET.getRow(22).getCell(0).getStringCellValue();
+			 * 
+			 * constants.LLINTRO_URL =URL_SHEET.getRow(23).getCell(0).getStringCellValue();
+			 * constants.CREATE_LL_URL =
+			 * URL_SHEET.getRow(24).getCell(0).getStringCellValue();
+			 * constants.TYPE_OF_LL_URL =
+			 * URL_SHEET.getRow(25).getCell(0).getStringCellValue();
+			 * constants.IMPLEMENT_LL_URL
+			 * =URL_SHEET.getRow(26).getCell(0).getStringCellValue();
+			 * constants.TRAVERSE_LL_URL =
+			 * URL_SHEET.getRow(27).getCell(0).getStringCellValue();
+			 * constants.INSERTION_LL_URL
+			 * =URL_SHEET.getRow(28).getCell(0).getStringCellValue();
+			 * constants.DELETION_LL_URL =
+			 * URL_SHEET.getRow(29).getCell(0).getStringCellValue();
+			 * 
+			 * constants.OVERVIEW_OF_TREE_URL=URL_SHEET.getRow(30).getCell(0).
+			 * getStringCellValue();
+			 * constants.TERMINOLOGIES_URL=URL_SHEET.getRow(31).getCell(0).
+			 * getStringCellValue();
+			 * constants.TYPES_OF_TREES_URL=URL_SHEET.getRow(32).getCell(0).
+			 * getStringCellValue();
+			 * constants.TREE_TRAVERSALS_URL=URL_SHEET.getRow(33).getCell(0).
+			 * getStringCellValue();
+			 * constants.TRAVERSALS_ILLUSTRATION_URL=URL_SHEET.getRow(34).getCell(0).
+			 * getStringCellValue();
+			 * constants.BINARY_TREE_URL=URL_SHEET.getRow(35).getCell(0).getStringCellValue(
+			 * ); constants.TYPES_OF_BINARY_TREE_URL=URL_SHEET.getRow(36).getCell(0).
+			 * getStringCellValue();
+			 * constants.IMPLEMENTATION_IN_PYTHON_URL=URL_SHEET.getRow(37).getCell(0).
+			 * getStringCellValue();
+			 * constants.BINARY_TREE_TRAVERSALS_URL=URL_SHEET.getRow(38).getCell(0).
+			 * getStringCellValue();
+			 * constants.IMPLEMENTATION_OF_BINARY_TREES_URL=URL_SHEET.getRow(39).getCell(0).
+			 * getStringCellValue();
+			 * constants.APPLICATIONS_OF_BINARY_TREES_URL=URL_SHEET.getRow(40).getCell(0).
+			 * getStringCellValue();
+			 * constants.BINARY_SEARCH_TREE_URL=URL_SHEET.getRow(41).getCell(0).
+			 * getStringCellValue();
+			 * constants.IMPLEMENTATION_OF_BST_URL=URL_SHEET.getRow(42).getCell(0).
+			 * getStringCellValue(); //
+			 * 
+			 * System.out.println("constants.HOME "+constants.HOME );
+			 * System.out.println("constants.ARRAY_PAGE_URL "+ constants.ARRAY_PAGE_URL);
+			 * System.out.println("constants.ARRAY_PYTHON_URL "+constants.ARRAY_PYTHON_URL);
+			 * System.out.println("constants.ARRAY_LIST_URL "+constants.ARRAY_LIST_URL);
+			 * System.out.println("constants.ARRAY_BASIC_URL "+constants.ARRAY_BASIC_URL);
+			 * System.out.println("constants.ARRAY_APPS_URL "+constants.ARRAY_APPS_URL);
+			 * System.out.println("constants.ARRAY_PRACTICE "+constants.ARRAY_PRACTICE);
+			 * System.out.println("constants.EDITOR "+constants.EDITOR);
+			 * 
+			 * System.out.println("constants.SEARCH_THE_ARRAY_URL :"+constants.
+			 * SEARCH_THE_ARRAY_URL);
+			 * System.out.println("constants.MAX_CONSECUTIVES_URL :"+constants.
+			 * MAX_CONSECUTIVES_URL);
+			 */
 			workbook.close();
 		} catch (IOException exception) {
 			exception.printStackTrace();

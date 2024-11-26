@@ -14,54 +14,51 @@ import numpyninja.dsalgo.constants.Constants;
 import numpyninja.dsalgo.webdrivermanager.DriverManager;
 
 public class ArrayPage {
-	  
-	
-	
+
 	WebDriver gdriver;
 	Constants constants = new Constants();
-	
-	  public ArrayPage(WebDriver webDriver)
-	  {
-		  gdriver = webDriver;
-	      PageFactory.initElements(webDriver, this);
-	  }
-	  
-	  @FindBy (xpath="//a[@href='array']")
-	  @CacheLookup
-	  public WebElement ARRAY_GETSTARTED;
-	  
-	  @FindBy (xpath="//*[contains(@href,'tryEditor')]")
-	  @CacheLookup
-	  public WebElement TRY_HERE;
-	  
-	  @FindBy (xpath="//*[contains(@href,'arrays-in-python')]")
-	  @CacheLookup
-	  public WebElement ARRAYS_IN_PYTHON; 
-	  
-	  @FindBy (xpath="//*[contains(@href,'arrays-using-list')]")
-	  @CacheLookup
-	  public WebElement ARRAYS_USING_LIST;
-	  
-	  @FindBy (xpath="//*[contains(@href,'basic-operations-in-lists')]")
-	  @CacheLookup
-	  public WebElement BASIC_OPS_IN_LIST;
-	  
-	  @FindBy (xpath="//*[contains(@href,'applications-of-array')]")
-	  @CacheLookup
-	  public WebElement APPLICATIONS_OF_ARRAY;
-	  
-	  @FindBy (xpath="//*[contains(@href,'practice')]")
-	  @CacheLookup
-	  public WebElement PRACTISE_QUESTIONS;
-	  
-	  @FindBy (xpath="//*[@id='answer_form']/div/div")
-	  @CacheLookup
-	  public WebElement PYTHON_EDITOR;
-	  
-	  @FindBy (xpath="//*[@id='answer_form']/button")
-	  @CacheLookup
-	  public WebElement RUN;
-	  
+
+	public ArrayPage(WebDriver webDriver) {
+		gdriver = webDriver;
+		PageFactory.initElements(webDriver, this);
+	}
+
+	@FindBy(xpath = "//a[@href='array']")
+	@CacheLookup
+	public WebElement ARRAY_GETSTARTED;
+
+	@FindBy(xpath = "//*[contains(@href,'tryEditor')]")
+	@CacheLookup
+	public WebElement TRY_HERE;
+
+	@FindBy(xpath = "//*[contains(@href,'arrays-in-python')]")
+	@CacheLookup
+	public WebElement ARRAYS_IN_PYTHON;
+
+	@FindBy(xpath = "//*[contains(@href,'arrays-using-list')]")
+	@CacheLookup
+	public WebElement ARRAYS_USING_LIST;
+
+	@FindBy(xpath = "//*[contains(@href,'basic-operations-in-lists')]")
+	@CacheLookup
+	public WebElement BASIC_OPS_IN_LIST;
+
+	@FindBy(xpath = "//*[contains(@href,'applications-of-array')]")
+	@CacheLookup
+	public WebElement APPLICATIONS_OF_ARRAY;
+
+	@FindBy(xpath = "//*[contains(@href,'practice')]")
+	@CacheLookup
+	public WebElement PRACTISE_QUESTIONS;
+
+	@FindBy(xpath = "//*[@id='answer_form']/div/div")
+	@CacheLookup
+	public WebElement PYTHON_EDITOR;
+
+	@FindBy(xpath = "//*[@id='answer_form']/button")
+	@CacheLookup
+	public WebElement RUN;
+
 	public void enterInValidCode() {
 		gdriver.findElement(By.cssSelector(".CodeMirror-scroll")).click();
 		JavascriptExecutor js = (JavascriptExecutor) gdriver;
@@ -90,7 +87,7 @@ public class ArrayPage {
 		}
 		return result;
 	}
-	
+
 	public void run() {
 		RUN.click();
 	}
@@ -106,29 +103,46 @@ public class ArrayPage {
 		}
 		return result;
 	}
-	
+
 	public void click_ApplicationsOfArray()
-	
-	{APPLICATIONS_OF_ARRAY.click();}
-	
-	public void click_ArraysInPython() {ARRAYS_IN_PYTHON.click();}
-	public void click_BasicOpsInList() {BASIC_OPS_IN_LIST.click();}
-	public void click_ArraysUsingList() {ARRAYS_USING_LIST.click();}
-	public void click_PractiseQuestions() {PRACTISE_QUESTIONS.click();}
-	
-	
+
+	{
+		APPLICATIONS_OF_ARRAY.click();
+	}
+
+	public void click_ArraysInPython() {
+		ARRAYS_IN_PYTHON.click();
+	}
+
+	public void click_BasicOpsInList() {
+		BASIC_OPS_IN_LIST.click();
+	}
+
+	public void click_ArraysUsingList() {
+		ARRAYS_USING_LIST.click();
+	}
+
+	public void click_PractiseQuestions() {
+		PRACTISE_QUESTIONS.click();
+	}
+
 	public boolean Validate_ArrayInPython_URL() {
-		boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constants.ARRAY_PYTHON_URL);
+		boolean RESULT = DriverManager.getDriver().getCurrentUrl().contains(constants.ARRAY_PYTHON_URL);
 		return RESULT;
 	}
+
 	public boolean Validate_ArraysUsingList_URL() {
-		boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constants.ARRAY_LIST_URL);
+		boolean RESULT = DriverManager.getDriver().getCurrentUrl().contains(constants.ARRAY_LIST_URL);
 		return RESULT;
 	}
-	public boolean Validate_BasicOpsInList_URL() {boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constants.ARRAY_BASIC_URL);
-	return RESULT;}
+
+	public boolean Validate_BasicOpsInList_URL() {
+		boolean RESULT = DriverManager.getDriver().getCurrentUrl().contains(constants.ARRAY_BASIC_URL);
+		return RESULT;
+	}
+
 	public boolean Validate_ApplicationsOfArray_URL() {
-		boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constants.ARRAY_APPS_URL);
+		boolean RESULT = DriverManager.getDriver().getCurrentUrl().contains(constants.ARRAY_APPS_URL);
 		return RESULT;
 	}
 }

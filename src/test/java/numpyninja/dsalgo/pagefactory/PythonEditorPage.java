@@ -14,47 +14,42 @@ import numpyninja.dsalgo.constants.Constants;
 import numpyninja.dsalgo.utilities.LoggerLoad;
 
 public class PythonEditorPage {
-	
-	public WebDriver ldriver;
-	Constants con=new Constants();
-	
-	public PythonEditorPage (WebDriver rdriver) {
-		
-	    ldriver=rdriver;
-	    PageFactory.initElements(rdriver, this);
 
-}
-	
-	@FindBy(xpath="//button[text()='Run']")
+	public WebDriver ldriver;
+	Constants con = new Constants();
+
+	public PythonEditorPage(WebDriver rdriver) {
+
+		ldriver = rdriver;
+		PageFactory.initElements(rdriver, this);
+
+	}
+
+	@FindBy(xpath = "//button[text()='Run']")
 	@CacheLookup
 	WebElement RUNBTN;
-	
+
 	@FindBy(xpath = "//a[contains(@href,'/tryEditor')]")
 	@CacheLookup
 	private static WebElement TRYHERE_BTN;
-	
+
 	private String EDITOR_URL = "https://dsportalapp.herokuapp.com/tryEditor";
-	  
-    public void enterValidCode() {
+
+	public void enterValidCode() {
 		ldriver.findElement(By.cssSelector(".CodeMirror-scroll")).click();
 		JavascriptExecutor js = (JavascriptExecutor) ldriver;
 		js.executeScript("window.scrollTo(0,0)");
-		ldriver.findElement(By.cssSelector("div:nth-child(1) > textarea"))
-				.sendKeys("print" + con.PYTHON_EDITOR_INPUT);
+		ldriver.findElement(By.cssSelector("div:nth-child(1) > textarea")).sendKeys("print" + con.PYTHON_EDITOR_INPUT);
 
 	}
-	
-	
+
 	public void enterInValidCode() {
 		ldriver.findElement(By.cssSelector(".CodeMirror-scroll")).click();
 		JavascriptExecutor js = (JavascriptExecutor) ldriver;
 		js.executeScript("window.scrollTo(0,0)");
-		ldriver.findElement(By.cssSelector("div:nth-child(1) > textarea"))
-				.sendKeys("Print " + con.PYTHON_EDITOR_INPUT);
+		ldriver.findElement(By.cssSelector("div:nth-child(1) > textarea")).sendKeys("Print " + con.PYTHON_EDITOR_INPUT);
 
 	}
-
-	
 
 	public void noCodeEntered() {
 		ldriver.findElement(By.cssSelector(".CodeMirror-scroll")).click();
@@ -91,18 +86,18 @@ public class PythonEditorPage {
 		return result;
 
 	}
-	
+
 	public boolean editorPgIsDisplayed() {
 		boolean result = ldriver.getCurrentUrl().equalsIgnoreCase(EDITOR_URL);
 		return result;
 	}
-    
-    public void clickRun() {
-    	RUNBTN.click();
-       
-    }
-    
-     public  void clickTryHere() {
+
+	public void clickRun() {
+		RUNBTN.click();
+
+	}
+
+	public void clickTryHere() {
 		TRYHERE_BTN.click();
 	}
 

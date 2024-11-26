@@ -19,10 +19,10 @@ import numpyninja.dsalgo.constants.Constants;
 public class SignInPage {
 
 	public WebDriver ldriver;
-	
-	 private String INVALID_USERNAME;
-	 private String INVALID_PASSWORD;
-     private String EXPECTED_LOGIN_ERROR_MSG;
+
+	private String INVALID_USERNAME;
+	private String INVALID_PASSWORD;
+	private String EXPECTED_LOGIN_ERROR_MSG;
 
 	public SignInPage(WebDriver rdriver) {
 		ldriver = rdriver;
@@ -56,27 +56,25 @@ public class SignInPage {
 	@FindBy(xpath = "//div[@role='alert']")
 	WebElement invalidusrnamepswd;
 
-	@FindBy(xpath="//a[@href='/logout']")
+	@FindBy(xpath = "//a[@href='/logout']")
 	WebElement signout;
-   
-	
+
 	// ----------------MethodsImplementation----------------------------------------//
 
-	
-	public void signout()
-	{
+	public void signout() {
 		signout.click();
 	}
+
 	public void navigateSignIn() {
 		GetStarted gs = new GetStarted(ldriver);
 		gs.clickgetstartedbtn();
-		
+
 	}
 
 	public void clickSignIn() {
-		
+
 		btnSignin.click();
-		
+
 	}
 
 	public void ValidCredentials() {
@@ -114,10 +112,9 @@ public class SignInPage {
 
 	}
 
-	
-   public boolean ValidateLoginErrorMsg(String password,String expectedErrorMsg) {
+	public boolean ValidateLoginErrorMsg(String password, String expectedErrorMsg) {
 		boolean result = false;
-		if (password =="") {
+		if (password == "") {
 
 			String msg = txtpassword.getAttribute("validationMessage");
 			result = msg.contains(expectedErrorMsg);
@@ -138,7 +135,6 @@ public class SignInPage {
 		txtpassword.clear();
 		txtpassword.sendKeys(password);
 
-		
 	}
-	
+
 }

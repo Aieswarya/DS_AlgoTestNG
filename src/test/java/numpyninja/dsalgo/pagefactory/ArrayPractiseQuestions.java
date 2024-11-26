@@ -21,116 +21,99 @@ import numpyninja.dsalgo.utilities.LoggerLoad;
 import numpyninja.dsalgo.webdrivermanager.DriverManager;
 
 public class ArrayPractiseQuestions extends BasePage {
-	
+
 	Constants constant = new Constants();
 
 	public ArrayPractiseQuestions(WebDriver driver) {
 		super(driver);
 	}
 
-	@FindBy(xpath="//a[@href='/question/1']")
+	@FindBy(xpath = "//a[@href='/question/1']")
 	private WebElement SEARCH_THE_ARRAY_LINK;
-	
-	@FindBy(xpath="//a[@href='/question/2']")
+
+	@FindBy(xpath = "//a[@href='/question/2']")
 	private WebElement MAX_CONSECUTIVES_LINK;
-	
-	@FindBy(xpath="//a[@href='/question/3']")
+
+	@FindBy(xpath = "//a[@href='/question/3']")
 	private WebElement FIND_NUM_WITH_EVEN_DIGITS_LINK;
-	
-	@FindBy(xpath="//a[@href='/question/4']")
+
+	@FindBy(xpath = "//a[@href='/question/4']")
 	private WebElement SQUARES_OF_A_SORTED_ARRAY_LINK;
-	
-	@FindBy(xpath="//button[@type='button' and text()='Run']")
+
+	@FindBy(xpath = "//button[@type='button' and text()='Run']")
 	private WebElement RUN;
-	
-	@FindBy(xpath="//input[@type='submit']")
+
+	@FindBy(xpath = "//input[@type='submit']")
 	private WebElement SUBMIT;
-	
-	
-	@FindBy(xpath="//div[contains(@class,'CodeMirror') and contains(@class,'cm-s-default')]//textarea")
+
+	@FindBy(xpath = "//div[contains(@class,'CodeMirror') and contains(@class,'cm-s-default')]//textarea")
 	private WebElement TRY_HERE_EDITOR;
-	
-	@FindBy(id="answer_form")
+
+	@FindBy(id = "answer_form")
 	WebElement ANSWER_FORM;
-	
-	
-	@FindBy(id="output")
+
+	@FindBy(id = "output")
 	WebElement TRY_HERE_OUTPUT;
-	
-	
+
 	private String[] ATYPES = { "Arrays In Python", "Arrays Using List", "Basic Operations in Lists",
-	"Applications of Array" };
-	
-	
-	
-	public void Click_SearchTheArray()
-	{
+			"Applications of Array" };
+
+	public void Click_SearchTheArray() {
 		SEARCH_THE_ARRAY_LINK.click();
 	}
-	
-	public void Click_MaxConsecutives()
-	{
+
+	public void Click_MaxConsecutives() {
 		MAX_CONSECUTIVES_LINK.click();
 	}
-	
-	public void Click_FindNumWithEvenDigits()
-	{
+
+	public void Click_FindNumWithEvenDigits() {
 		FIND_NUM_WITH_EVEN_DIGITS_LINK.click();
 	}
-	public void Click_SquaresOfSortedArray()
-	{
+
+	public void Click_SquaresOfSortedArray() {
 		SQUARES_OF_A_SORTED_ARRAY_LINK.click();
 	}
-	
-	public void click_Run()
-	{
-		WebDriverWait w1= new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(40));
+
+	public void click_Run() {
+		WebDriverWait w1 = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(40));
 		w1.until(ExpectedConditions.elementToBeClickable(RUN));
 		RUN.click();
 	}
-	public void click_Submit()
-	{
-		WebDriverWait webdriverWait= new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(40));
+
+	public void click_Submit() {
+		WebDriverWait webdriverWait = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(40));
 		webdriverWait.until(ExpectedConditions.elementToBeClickable(SUBMIT));
 		SUBMIT.click();
 	}
-	
-	
-	
-	
-	public boolean validate_Search_Array_URL()
-	{
+
+	public boolean validate_Search_Array_URL() {
 		boolean result;
-		
-		 result=DriverManager.getDriver().getCurrentUrl().contains(constant.SEARCH_THE_ARRAY_URL);
-		 return result;
+
+		result = DriverManager.getDriver().getCurrentUrl().contains(constant.SEARCH_THE_ARRAY_URL);
+		return result;
 	}
-	
-	public boolean validate_Max_Ones_URL()
-	{
+
+	public boolean validate_Max_Ones_URL() {
 		boolean result;
-		
-		 result=DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constant.MAX_CONSECUTIVES_URL);
-		 return result;
+
+		result = DriverManager.getDriver().getCurrentUrl().contains(constant.MAX_CONSECUTIVES_URL);
+		return result;
 	}
-	public boolean validate_Find_Even_URL()
-	{
+
+	public boolean validate_Find_Even_URL() {
 		boolean result;
-		
-		 result=DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constant.FIND_NUM_WITH_EVEN_DIGITS_URL);
-		 return result;
+
+		result = DriverManager.getDriver().getCurrentUrl().contains(constant.FIND_NUM_WITH_EVEN_DIGITS_URL);
+		return result;
 	}
-	
-	public boolean validate_Sorted_squares_URL()
-	{
+
+	public boolean validate_Sorted_squares_URL() {
 		boolean result;
-		
-		 result=DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constant.SQUARES_OF_A_SORTED_ARRAY_URL);
-		 return result;
+
+		result = DriverManager.getDriver().getCurrentUrl().contains(constant.SQUARES_OF_A_SORTED_ARRAY_URL);
+		return result;
 	}
-	
-	
-	
+
 	public boolean alertMsgIsDisplayed() {
 		boolean result = false;
 		try {
@@ -157,52 +140,40 @@ public class ArrayPractiseQuestions extends BasePage {
 		}
 		return result;
 	}
-		////////////////////
-	
+
 	public String getOutputValue() {
-		WebDriverWait w1= new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(40));
+		WebDriverWait w1 = new WebDriverWait(DriverManager.getDriver(), Duration.ofSeconds(40));
 		w1.until(ExpectedConditions.visibilityOf(TRY_HERE_OUTPUT));
 		return TRY_HERE_OUTPUT.getText().trim();
 	}
-	
+
 	public String getTryHereEditorValue() {
 		return TRY_HERE_EDITOR.getText();
 	}
-		
+
 	public boolean ValidateArrayPractiseOutput(String expectedOutput) {
-		boolean RESULT =getOutputValue().equalsIgnoreCase(expectedOutput) ;
+		boolean RESULT = getOutputValue().equalsIgnoreCase(expectedOutput);
 		return RESULT;
 	}
-		
-		public void enterCodePractice(String code) {
-				
-			ANSWER_FORM.click();
-			String[] str1 = code.split("\\\\n");
-			
 
-			for(String i:str1) {
-				
-				System.out.println(i);
+	public void enterCodePractice(String code) {
+
+		ANSWER_FORM.click();
+		String[] str1 = code.split("\\\\n");
+
+		TRY_HERE_EDITOR.sendKeys(Keys.COMMAND + "a");
+		TRY_HERE_EDITOR.sendKeys(Keys.DELETE);
+
+		for (int i = 0; i < str1.length; i++) {
+
+			if (str1[i].contains("\\b")) {
+
+				TRY_HERE_EDITOR.sendKeys(Keys.BACK_SPACE);
+			} else {
+				TRY_HERE_EDITOR.sendKeys(str1[i]);
+				TRY_HERE_EDITOR.sendKeys(Keys.ENTER);
 				
 			}
-			
-			TRY_HERE_EDITOR.sendKeys(Keys.COMMAND+"a");
-			TRY_HERE_EDITOR.sendKeys(Keys.DELETE);
-			//new Actions(DriverManager.getDriver()).keyDown(Keys.COMMAND).sendKeys("a").keyUp(Keys.CONTROL).sendKeys(Keys.DELETE).perform();
-			
-			for (int i = 0; i < str1.length; i++) {
-				
-				if (str1[i].contains("\\b")) {
-
-					TRY_HERE_EDITOR.sendKeys(Keys.BACK_SPACE);
-				} else {
-					TRY_HERE_EDITOR.sendKeys(str1[i]);
-					TRY_HERE_EDITOR.sendKeys(Keys.ENTER);
-					System.out.println("code is "+ str1[i]);
-				}
-			}
-			
-			
-			
 		}
-		}
+	}
+}

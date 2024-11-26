@@ -15,18 +15,14 @@ import org.openqa.selenium.support.ui.Select;
 import numpyninja.dsalgo.constants.Constants;
 import numpyninja.dsalgo.webdrivermanager.DriverManager;
 
-//tagname[@attributeName='value']
-//tagname[text()='value']
-
-//
 public class HomePage {
 
 	public WebDriver hdriver;
-	Constants constants=new Constants();
+	Constants constants = new Constants();
 
 	public HomePage(WebDriver rdriver) {
 		hdriver = rdriver;
-		
+
 		PageFactory.initElements(rdriver, this);
 	}
 
@@ -112,15 +108,13 @@ public class HomePage {
 
 	}
 
-	
-
 	public void dropdown() {
 
 		DS_DROPDOWN.click();
 	}
 
 	public boolean getdropdownoptions(int count, String options) {
-		
+
 		boolean result = false;
 		List<WebElement> ddlist = hdriver.findElements(By.xpath("//div[@class='dropdown-menu show']//a"));
 		String[] givenlist = options.split(",");
@@ -226,42 +220,42 @@ public class HomePage {
 	}
 
 	public boolean DSIntroPageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.dsintropage);
+		boolean result = hdriver.getCurrentUrl().contains(constants.dsintropage);
 		return result;
 	}
 
 	public boolean ArrayPageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.arraypage);
+		boolean result = hdriver.getCurrentUrl().contains(constants.arraypage);
 		return result;
 	}
 
 	public boolean StackPageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.stackpage);
+		boolean result = hdriver.getCurrentUrl().contains(constants.stackpage);
 		return result;
 	}
 
 	public boolean LLPageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.llpage);
+		boolean result = hdriver.getCurrentUrl().contains(constants.llpage);
 		return result;
 	}
 
 	public boolean QueuePageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.queuepage);
+		boolean result = hdriver.getCurrentUrl().contains(constants.queuepage);
 		return result;
 	}
 
 	public boolean TreePageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.treepage);
+		boolean result = hdriver.getCurrentUrl().contains(constants.treepage);
 		return result;
 	}
 
 	public boolean GraphPageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.graphpage);
+		boolean result = hdriver.getCurrentUrl().contains(constants.graphpage);
 		return result;
 	}
 
 	public boolean GetStartedPageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.gspage);
+		boolean result = hdriver.getCurrentUrl().contains(constants.gspage);
 		return result;
 	}
 

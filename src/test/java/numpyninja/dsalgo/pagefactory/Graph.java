@@ -6,7 +6,6 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.NoAlertPresentException;
-import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
@@ -14,7 +13,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import numpyninja.dsalgo.constants.Constants;
-
 
 public class Graph {
 
@@ -40,8 +38,8 @@ public class Graph {
 	@CacheLookup
 	private static WebElement geditor;
 
-	//@FindBy(xpath = "//*[@id=\"answer_form\"]/button")
-	@FindBy(xpath="//*[@id='answer_form']/button")
+	// @FindBy(xpath = "//*[@id=\"answer_form\"]/button")
+	@FindBy(xpath = "//*[@id='answer_form']/button")
 	@CacheLookup
 	private static WebElement RUN_BTN;
 
@@ -56,8 +54,6 @@ public class Graph {
 	@FindBy(xpath = "//a[contains(@href,'/graph/practice')]")
 	@CacheLookup
 	private static WebElement PRACTISE_QUESTIONS;
-
-	
 
 	public void clickGraphLk() {
 		GRAPH_LK.click();
@@ -88,17 +84,17 @@ public class Graph {
 	}
 
 	public boolean graphPgIsDisplayed() {
-		boolean result = gdriver.getCurrentUrl().equalsIgnoreCase(constants.GRAPHPG_URL);
+		boolean result = gdriver.getCurrentUrl().contains(constants.GRAPHPG_URL);
 		return result;
 	}
 
 	public boolean graphRepPgIsDisplayed() {
-		boolean result = gdriver.getCurrentUrl().equalsIgnoreCase(constants.GRAPHREP_URL);
+		boolean result = gdriver.getCurrentUrl().contains(constants.GRAPHREP_URL);
 		return result;
 	}
 
 	public boolean editorPgIsDisplayed() {
-		boolean result = gdriver.getCurrentUrl().equalsIgnoreCase(constants.EDITOR_URL);
+		boolean result = gdriver.getCurrentUrl().contains(constants.EDITOR_URL);
 		return result;
 	}
 

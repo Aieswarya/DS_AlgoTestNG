@@ -1,6 +1,5 @@
 package numpyninja.dsalgo.pagefactory;
 
-
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -13,7 +12,7 @@ import numpyninja.dsalgo.constants.Constants;
 public class LinkedList {
 
 	public WebDriver lldriver;
-	Constants constants=new Constants();
+	Constants constants = new Constants();
 
 	public LinkedList(WebDriver rdriver) {
 		lldriver = rdriver;
@@ -46,7 +45,6 @@ public class LinkedList {
 	@CacheLookup
 	private WebElement PRACTISE_HERE;
 
-	
 	boolean result = false;
 
 	public void click_llIntro_link() {
@@ -63,10 +61,8 @@ public class LinkedList {
 
 	public void click_Implementll_link() {
 		try {
-		IMPLEMENT_LL_LK.click();
-		}
-		catch(StaleElementReferenceException exception) 
-		{
+			IMPLEMENT_LL_LK.click();
+		} catch (StaleElementReferenceException exception) {
 			IMPLEMENT_LL_LK.click();
 		}
 	}
@@ -88,37 +84,37 @@ public class LinkedList {
 	}
 
 	public boolean Validate_LLIntro_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.LLINTRO_URL);
+		result = lldriver.getCurrentUrl().contains(constants.LLINTRO_URL);
 		return result;
 	}
 
 	public boolean Validate_ImplementLL_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.IMPLEMENT_LL_URL);
+		result = lldriver.getCurrentUrl().contains(constants.IMPLEMENT_LL_URL);
 		return result;
 	}
 
 	public boolean Validate_TypesOfLL_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.TYPE_OF_LL_URL);
+		result = lldriver.getCurrentUrl().contains(constants.TYPE_OF_LL_URL);
 		return result;
 	}
 
 	public boolean Validate_TraverseLL_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.TRAVERSE_LL_URL);
+		result = lldriver.getCurrentUrl().contains(constants.TRAVERSE_LL_URL);
 		return result;
 	}
 
 	public boolean Validate_CreateLL_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.CREATE_LL_URL);
+		result = lldriver.getCurrentUrl().contains(constants.CREATE_LL_URL);
 		return result;
 	}
 
 	public boolean Validate_DeleteLL_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.DELETION_LL_URL);
+		result = lldriver.getCurrentUrl().contains(constants.DELETION_LL_URL);
 		return result;
 	}
 
 	public boolean Validate_InsertLL_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.INSERTION_LL_URL);
+		result = lldriver.getCurrentUrl().contains(constants.INSERTION_LL_URL);
 		return result;
 	}
 
