@@ -13,7 +13,7 @@ import numpyninja.dsalgo.webdrivermanager.DriverManager;
 
 public class BaseClass {
 
-	//@BeforeClass
+	@BeforeClass
 	public void beforeScenario() {
 		LoggerLoad.info("DS Algo TestNG test started ");
 
@@ -44,8 +44,8 @@ public class BaseClass {
 
 	}
 
-	@Parameters("browser")
-	@BeforeClass
+	//@Parameters("browser")
+	//@BeforeClass
 	public void beforecrossbrowserScenario(String browser) {
 		LoggerLoad.info("DS Algo TestNG test started ");
 

@@ -8,25 +8,36 @@
   <test name="DSAlgoTestNG">
   <parameter name="browser" value="chrome"/>
   <classes>
-<!--class name="numpyninja.dsalgo.testcases.GetStartedTestCase"></class-->
-<!--  class name="numpyninja.dsalgo.testcases.HomePageTestCase"></class-->
+<class name="numpyninja.dsalgo.testcases.GetStartedTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.HomePageTestCase"></class>
 <class name="numpyninja.dsalgo.testcases.SignInTestCase"></class>
 <class name="numpyninja.dsalgo.testcases.DataStructureTestCase"></class>
 <class name="numpyninja.dsalgo.testcases.StackPageTestCase"></class>
 <class name="numpyninja.dsalgo.testcases.QueueTestCase"></class>
-
+<class name="numpyninja.dsalgo.testcases.RegisterTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.GraphTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.LinkedListTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.ArrayTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.ArrayPractiseTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.TreeTestCase"></class>
 </classes>
 </test> 
 
-<test name="DSAlgoTestNGCrossBrowserEdge">
+<!-- <test name="DSAlgoTestNGCrossBrowserEdge">
  <parameter name="browser" value="edge"/>
  <classes>
-<!--class name="numpyninja.dsalgo.testcases.GetStartedTestCase"></class-->
-<!--  class name="numpyninja.dsalgo.testcases.HomePageTestCase"></class-->
-<!--class name="numpyninja.dsalgo.testcases.SignInTestCase"></class-->
-<!-- class name="numpyninja.dsalgo.testcases.DataStructureTestCase"></class-->
-<!--class name="numpyninja.dsalgo.testcases.StackPageTestCase"></class-->
+<class name="numpyninja.dsalgo.testcases.GetStartedTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.HomePageTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.SignInTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.DataStructureTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.StackPageTestCase"></class>
 <class name="numpyninja.dsalgo.testcases.QueueTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.RegisterTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.GraphTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.LinkedListTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.ArrayTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.ArrayPractiseTestCase"></class>
+<class name="numpyninja.dsalgo.testcases.TreeTestCase"></class>
 </classes>
-</test> 
+</test>  -->
 </suite> <!-- Suite -->
