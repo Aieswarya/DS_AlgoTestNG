@@ -25,20 +25,47 @@ public FileInputStream fi;
 	String path;
 
 
-	public static void getLogin() {
+	public static void readExcelData() {
 
 		try {
 			Constants constants = new Constants();
 			FileInputStream file = new FileInputStream(new File("Data.xlsx"));
 			XSSFWorkbook workbook = new XSSFWorkbook(file);
-			Sheet sheet1 = workbook.getSheet("VALID_LOGIN");
-			Row row1 = sheet1.getRow(1);
+			Sheet LOGIN_SHEET = workbook.getSheet("VALID_LOGIN");
+			Sheet EDITOR_SHEET = workbook.getSheet("EDITOR");
+			Sheet REGISTER_SHEET=workbook.getSheet("REGISTER");
+			Sheet ARRAY_PRACTISE_SHEET=workbook.getSheet("ARRAY_PRACTISE");
+			Row row1 = LOGIN_SHEET.getRow(1);
 			Constants.USERNAME = row1.getCell(0).getStringCellValue(); // -- set credential values from properties file
 			constants.PASSWORD = row1.getCell(1).getStringCellValue();
-			Sheet sheet2 = workbook.getSheet("EDITOR");
-			Row row2 = sheet2.getRow(1);
+			
+			Row row2 = EDITOR_SHEET.getRow(1);
 			constants.PYTHON_EDITOR_INPUT = row2.getCell(0).getStringCellValue(); // --set python editor values
 			constants.PYTHON_EDITOR_OUTPUT = row2.getCell(1).getStringCellValue();
+			
+			constants.REGISTER_TEST_PSWD=REGISTER_SHEET.getRow(1).getCell(1).getStringCellValue();
+			constants.REGISTER_ALERT_MSG=REGISTER_SHEET.getRow(1).getCell(2).getStringCellValue();
+			constants.REGISTER_TEST_USERNAME=REGISTER_SHEET.getRow(1).getCell(0).getStringCellValue();
+			constants.REGISTER_TEST_PSWD2=REGISTER_SHEET.getRow(2).getCell(1).getStringCellValue();
+			constants.REGISTER_VALIDATION_MSG=REGISTER_SHEET.getRow(2).getCell(2).getStringCellValue();
+			
+			constants.SEARCH_ARRAY_VALID_CODE=ARRAY_PRACTISE_SHEET.getRow(1).getCell(0).getStringCellValue();
+			constants.MAX_CONS_ONES_VALID_CODE=ARRAY_PRACTISE_SHEET.getRow(2).getCell(0).getStringCellValue();
+			constants.FIND_EVEN_NUM_OF_DIGITS_VALID_CODE=ARRAY_PRACTISE_SHEET.getRow(3).getCell(0).getStringCellValue();
+			constants.SQUARES_OF_SORTED_ARRAY_VALID_CODE=ARRAY_PRACTISE_SHEET.getRow(4).getCell(0).getStringCellValue();
+			
+			constants.SEARCH_ARRAY_OUTPUT=ARRAY_PRACTISE_SHEET.getRow(1).getCell(1).getStringCellValue();
+			constants.MAX_CONS_ONES_OUTPUT=ARRAY_PRACTISE_SHEET.getRow(2).getCell(1).getStringCellValue();
+			constants.FIND_EVEN_NUM_OUTPUT=ARRAY_PRACTISE_SHEET.getRow(3).getCell(1).getStringCellValue();
+			constants.SQUARES_OF_SORTED_ARRAY_OUTPUT=ARRAY_PRACTISE_SHEET.getRow(4).getCell(1).getStringCellValue();
+			
+			constants.SEARCH_ARRAY_INVALID_CODE=ARRAY_PRACTISE_SHEET.getRow(7).getCell(0).getStringCellValue();
+			constants.MAX_CONS_ONES_INVALID_CODE=ARRAY_PRACTISE_SHEET.getRow(8).getCell(0).getStringCellValue();
+			constants.FIND_EVEN_NUM_OF_DIGITS_INVALID_CODE=ARRAY_PRACTISE_SHEET.getRow(9).getCell(0).getStringCellValue();
+			constants.SQUARES_OF_SORTED_ARRAY_INVALID_CODE=ARRAY_PRACTISE_SHEET.getRow(6).getCell(0).getStringCellValue();
+			
+			constants.ARRAY_PRACTISE_SUCCESS_MSG=ARRAY_PRACTISE_SHEET.getRow(0).getCell(0).getStringCellValue();
+			
 			workbook.close();
 		} catch (IOException exception) {
 			exception.printStackTrace();
