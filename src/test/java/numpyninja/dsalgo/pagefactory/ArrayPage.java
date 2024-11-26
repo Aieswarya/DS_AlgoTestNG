@@ -15,14 +15,7 @@ import numpyninja.dsalgo.webdrivermanager.DriverManager;
 
 public class ArrayPage {
 	  
-	public final String HOME = "https://dsportalapp.herokuapp.com/home";
-	public final String ARRAY_PAGE_URL = "https://dsportalapp.herokuapp.com/array/";
-	public final String ARRAY_PYTHON_URL = "https://dsportalapp.herokuapp.com/array/arrays-in-python/";
-	public final String ARRAY_LIST_URL = "https://dsportalapp.herokuapp.com/array/arrays-using-list/";
-	public final String ARRAY_BASIC_URL = "https://dsportalapp.herokuapp.com/array/basic-operations-in-lists/";
-	public final String ARRAY_APPS_URL = "https://dsportalapp.herokuapp.com/array/applications-of-array/";
-	public final String ARRAY_PRACTICE = "https://dsportalapp.herokuapp.com/array/practice";
-	public final String EDITOR = "https://dsportalapp.herokuapp.com/tryEditor";
+	
 	
 	WebDriver gdriver;
 	Constants constants = new Constants();
@@ -125,17 +118,17 @@ public class ArrayPage {
 	
 	
 	public boolean Validate_ArrayInPython_URL() {
-		boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(ARRAY_PYTHON_URL);
+		boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constants.ARRAY_PYTHON_URL);
 		return RESULT;
 	}
 	public boolean Validate_ArraysUsingList_URL() {
-		boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(ARRAY_LIST_URL);
+		boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constants.ARRAY_LIST_URL);
 		return RESULT;
 	}
-	public boolean Validate_BasicOpsInList_URL() {boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(ARRAY_BASIC_URL);
+	public boolean Validate_BasicOpsInList_URL() {boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constants.ARRAY_BASIC_URL);
 	return RESULT;}
 	public boolean Validate_ApplicationsOfArray_URL() {
-		boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(ARRAY_APPS_URL);
+		boolean RESULT = DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constants.ARRAY_APPS_URL);
 		return RESULT;
 	}
 }

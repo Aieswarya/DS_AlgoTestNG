@@ -60,10 +60,7 @@ public class ArrayPractiseQuestions extends BasePage {
 	private String[] ATYPES = { "Arrays In Python", "Arrays Using List", "Basic Operations in Lists",
 	"Applications of Array" };
 	
-	private String SEARCH_THE_ARRAY_URL="https://dsportalapp.herokuapp.com/question/1";
-	private String MAX_CONSECUTIVES_URL="https://dsportalapp.herokuapp.com/question/2";
-	private String FIND_NUM_WITH_EVEN_DIGITS_URL="https://dsportalapp.herokuapp.com/question/3";
-	private String SQUARES_OF_A_SORTED_ARRAY_URL="https://dsportalapp.herokuapp.com/question/4";
+	
 	
 	public void Click_SearchTheArray()
 	{
@@ -104,7 +101,7 @@ public class ArrayPractiseQuestions extends BasePage {
 	{
 		boolean result;
 		
-		 result=DriverManager.getDriver().getCurrentUrl().contains(SEARCH_THE_ARRAY_URL);
+		 result=DriverManager.getDriver().getCurrentUrl().contains(constant.SEARCH_THE_ARRAY_URL);
 		 return result;
 	}
 	
@@ -112,14 +109,14 @@ public class ArrayPractiseQuestions extends BasePage {
 	{
 		boolean result;
 		
-		 result=DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(MAX_CONSECUTIVES_URL);
+		 result=DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constant.MAX_CONSECUTIVES_URL);
 		 return result;
 	}
 	public boolean validate_Find_Even_URL()
 	{
 		boolean result;
 		
-		 result=DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(FIND_NUM_WITH_EVEN_DIGITS_URL);
+		 result=DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constant.FIND_NUM_WITH_EVEN_DIGITS_URL);
 		 return result;
 	}
 	
@@ -127,7 +124,7 @@ public class ArrayPractiseQuestions extends BasePage {
 	{
 		boolean result;
 		
-		 result=DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(SQUARES_OF_A_SORTED_ARRAY_URL);
+		 result=DriverManager.getDriver().getCurrentUrl().equalsIgnoreCase(constant.SQUARES_OF_A_SORTED_ARRAY_URL);
 		 return result;
 	}
 	

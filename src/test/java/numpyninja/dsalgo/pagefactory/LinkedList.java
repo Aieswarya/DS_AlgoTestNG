@@ -8,9 +8,12 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import numpyninja.dsalgo.constants.Constants;
+
 public class LinkedList {
 
 	public WebDriver lldriver;
+	Constants constants=new Constants();
 
 	public LinkedList(WebDriver rdriver) {
 		lldriver = rdriver;
@@ -43,14 +46,7 @@ public class LinkedList {
 	@CacheLookup
 	private WebElement PRACTISE_HERE;
 
-	private String LLINTRO_URL = "https://dsportalapp.herokuapp.com/linked-list/introduction/";
-	private String CREATE_LL_URL = "https://dsportalapp.herokuapp.com/linked-list/creating-linked-list/";
-	private String TYPE_OF_LL_URL = "https://dsportalapp.herokuapp.com/linked-list/types-of-linked-list/";
-	private String IMPLEMENT_LL_URL = "https://dsportalapp.herokuapp.com/linked-list/implement-linked-list-in-python/";
-	private String TRAVERSE_LL_URL = "https://dsportalapp.herokuapp.com/linked-list/traversal/";
-	private String INSERTION_LL_URL = "https://dsportalapp.herokuapp.com/linked-list/insertion-in-linked-list/";
-	private String DELETION_LL_URL = "https://dsportalapp.herokuapp.com/linked-list/deletion-in-linked-list/";
-
+	
 	boolean result = false;
 
 	public void click_llIntro_link() {
@@ -92,37 +88,37 @@ public class LinkedList {
 	}
 
 	public boolean Validate_LLIntro_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(LLINTRO_URL);
+		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.LLINTRO_URL);
 		return result;
 	}
 
 	public boolean Validate_ImplementLL_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(IMPLEMENT_LL_URL);
+		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.IMPLEMENT_LL_URL);
 		return result;
 	}
 
 	public boolean Validate_TypesOfLL_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(TYPE_OF_LL_URL);
+		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.TYPE_OF_LL_URL);
 		return result;
 	}
 
 	public boolean Validate_TraverseLL_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(TRAVERSE_LL_URL);
+		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.TRAVERSE_LL_URL);
 		return result;
 	}
 
 	public boolean Validate_CreateLL_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(CREATE_LL_URL);
+		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.CREATE_LL_URL);
 		return result;
 	}
 
 	public boolean Validate_DeleteLL_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(DELETION_LL_URL);
+		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.DELETION_LL_URL);
 		return result;
 	}
 
 	public boolean Validate_InsertLL_URL() {
-		result = lldriver.getCurrentUrl().equalsIgnoreCase(INSERTION_LL_URL);
+		result = lldriver.getCurrentUrl().equalsIgnoreCase(constants.INSERTION_LL_URL);
 		return result;
 	}
 

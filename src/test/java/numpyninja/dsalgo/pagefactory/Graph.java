@@ -57,9 +57,7 @@ public class Graph {
 	@CacheLookup
 	private static WebElement PRACTISE_QUESTIONS;
 
-	private String GRAPHPG_URL = "https://dsportalapp.herokuapp.com/graph/graph/";
-	private String GRAPHREP_URL = "https://dsportalapp.herokuapp.com/graph/graph-representations/";
-	private String EDITOR_URL = "https://dsportalapp.herokuapp.com/tryEditor";
+	
 
 	public void clickGraphLk() {
 		GRAPH_LK.click();
@@ -90,17 +88,17 @@ public class Graph {
 	}
 
 	public boolean graphPgIsDisplayed() {
-		boolean result = gdriver.getCurrentUrl().equalsIgnoreCase(GRAPHPG_URL);
+		boolean result = gdriver.getCurrentUrl().equalsIgnoreCase(constants.GRAPHPG_URL);
 		return result;
 	}
 
 	public boolean graphRepPgIsDisplayed() {
-		boolean result = gdriver.getCurrentUrl().equalsIgnoreCase(GRAPHREP_URL);
+		boolean result = gdriver.getCurrentUrl().equalsIgnoreCase(constants.GRAPHREP_URL);
 		return result;
 	}
 
 	public boolean editorPgIsDisplayed() {
-		boolean result = gdriver.getCurrentUrl().equalsIgnoreCase(EDITOR_URL);
+		boolean result = gdriver.getCurrentUrl().equalsIgnoreCase(constants.EDITOR_URL);
 		return result;
 	}
 

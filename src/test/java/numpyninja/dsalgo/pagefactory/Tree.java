@@ -6,9 +6,12 @@ import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import numpyninja.dsalgo.constants.Constants;
+
 public class Tree {
 	
 	public WebDriver tdriver;
+	Constants constants=new Constants();
 
 	public Tree(WebDriver rdriver) {
 		tdriver = rdriver;
@@ -58,19 +61,7 @@ public class Tree {
 	@CacheLookup
 	private WebElement PRACTISE_QUESTIONS;
 	
-	private String OVERVIEW_OF_TREE_URL="https://dsportalapp.herokuapp.com/tree/overview-of-trees/";
-	private String TERMINOLOGIES_URL="https://dsportalapp.herokuapp.com/tree/terminologies/";
-	private String TYPES_OF_TREES_URL="https://dsportalapp.herokuapp.com/tree/types-of-trees/";
-	private String TREE_TRAVERSALS_URL="https://dsportalapp.herokuapp.com/tree/tree-traversals/";
-	private String TRAVERSALS_ILLUSTRATION_URL="https://dsportalapp.herokuapp.com/tree/traversals-illustration/";
-	private String BINARY_TREE_URL="https://dsportalapp.herokuapp.com/tree/binary-trees/";
-	private String TYPES_OF_BINARY_TREE_URL="https://dsportalapp.herokuapp.com/tree/types-of-binary-trees/";
-	private String IMPLEMENTATION_IN_PYTHON_URL="https://dsportalapp.herokuapp.com/tree/implementation-in-python/";
-	private String BINARY_TREE_TRAVERSALS_URL="https://dsportalapp.herokuapp.com/tree/binary-tree-traversals/";
-	private String IMPLEMENTATION_OF_BINARY_TREES_URL="https://dsportalapp.herokuapp.com/tree/implementation-of-binary-trees/";
-	private String APPLICATIONS_OF_BINARY_TREES_URL="https://dsportalapp.herokuapp.com/tree/applications-of-binary-trees/";
-	private String BINARY_SEARCH_TREE_URL="https://dsportalapp.herokuapp.com/tree/binary-search-trees/";
-	private String IMPLEMENTATION_OF_BST_URL="https://dsportalapp.herokuapp.com/tree/implementation-of-bst/";
+	
 	
 	public boolean result=false;
 	
@@ -106,45 +97,45 @@ public class Tree {
 	public void click_PractiseQuestions() {PRACTISE_QUESTIONS.click();}
 	
 	public boolean Validate_OverviewOfTreePage() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(OVERVIEW_OF_TREE_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.OVERVIEW_OF_TREE_URL);
 				return result;}
 	public boolean Validate_TerminologiesPage() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(TERMINOLOGIES_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.TERMINOLOGIES_URL);
 		return result;}
 	public boolean Validate_TypesofTreesPage() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(TYPES_OF_TREES_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.TYPES_OF_TREES_URL);
 		return result;}
 	public boolean Validate_TreeTraversalsPage() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(TREE_TRAVERSALS_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.TREE_TRAVERSALS_URL);
 		return result;}
 	public boolean Validate_TraversalsIllustrationPage() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(TRAVERSALS_ILLUSTRATION_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.TRAVERSALS_ILLUSTRATION_URL);
 		
 		return result;
 		}
 	public boolean Validate_BinaryTreePage() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(BINARY_TREE_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.BINARY_TREE_URL);
 		return result;}
 	public boolean Validate_TypesOfBinaryTreePage() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(TYPES_OF_BINARY_TREE_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.TYPES_OF_BINARY_TREE_URL);
 		return result;}
 	public boolean Validate_ImplementationInPythonPage() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(IMPLEMENTATION_IN_PYTHON_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.IMPLEMENTATION_IN_PYTHON_URL);
 		return result;}
 	public boolean Validate_BinaryTreeTraversalsPage() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(BINARY_TREE_TRAVERSALS_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.BINARY_TREE_TRAVERSALS_URL);
 		return result;}
 	public boolean Validate_ImplementationOfBinaryTreesPage() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(IMPLEMENTATION_OF_BINARY_TREES_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.IMPLEMENTATION_OF_BINARY_TREES_URL);
 		return result;}
 	public boolean Validate_ApplicationOfBinaryTreesPage() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(APPLICATIONS_OF_BINARY_TREES_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.APPLICATIONS_OF_BINARY_TREES_URL);
 		return result;}
 	public boolean Validate_BinarySearchTreePage() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(BINARY_SEARCH_TREE_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.BINARY_SEARCH_TREE_URL);
 		return result;}
 	public boolean Validate_ImplementationOfBST() {
-		result = tdriver.getCurrentUrl().equalsIgnoreCase(IMPLEMENTATION_OF_BST_URL);
+		result = tdriver.getCurrentUrl().equalsIgnoreCase(constants.IMPLEMENTATION_OF_BST_URL);
 		return result;}
 	
 	

@@ -12,6 +12,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import numpyninja.dsalgo.constants.Constants;
 import numpyninja.dsalgo.webdrivermanager.DriverManager;
 
 //tagname[@attributeName='value']
@@ -21,6 +22,7 @@ import numpyninja.dsalgo.webdrivermanager.DriverManager;
 public class HomePage {
 
 	public WebDriver hdriver;
+	Constants constants=new Constants();
 
 	public HomePage(WebDriver rdriver) {
 		hdriver = rdriver;
@@ -110,14 +112,7 @@ public class HomePage {
 
 	}
 
-	private String dsintropage = "https://dsportalapp.herokuapp.com/data-structures-introduction/";
-	private String arraypage = "https://dsportalapp.herokuapp.com/array/";
-	private String llpage = "https://dsportalapp.herokuapp.com/linked-list/";
-	private String stackpage = "https://dsportalapp.herokuapp.com/stack/";
-	private String queuepage = "https://dsportalapp.herokuapp.com/queue/";
-	private String treepage = "https://dsportalapp.herokuapp.com/tree/";
-	private String graphpage = "https://dsportalapp.herokuapp.com/graph/";
-	private String gspage = "https://dsportalapp.herokuapp.com/";
+	
 
 	public void dropdown() {
 
@@ -231,42 +226,42 @@ public class HomePage {
 	}
 
 	public boolean DSIntroPageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(dsintropage);
+		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.dsintropage);
 		return result;
 	}
 
 	public boolean ArrayPageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(arraypage);
+		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.arraypage);
 		return result;
 	}
 
 	public boolean StackPageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(stackpage);
+		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.stackpage);
 		return result;
 	}
 
 	public boolean LLPageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(llpage);
+		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.llpage);
 		return result;
 	}
 
 	public boolean QueuePageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(queuepage);
+		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.queuepage);
 		return result;
 	}
 
 	public boolean TreePageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(treepage);
+		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.treepage);
 		return result;
 	}
 
 	public boolean GraphPageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(graphpage);
+		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.graphpage);
 		return result;
 	}
 
 	public boolean GetStartedPageIsDisplayed() {
-		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(gspage);
+		boolean result = hdriver.getCurrentUrl().equalsIgnoreCase(constants.gspage);
 		return result;
 	}
 
